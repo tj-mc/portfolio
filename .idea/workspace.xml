@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/comp/container/FontLoadContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/view/MainView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/AppContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/container/AppContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/InterfaceContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/container/ViewContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/Terminal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/Terminal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/text/BodyText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/BodyText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/pressable/QuickCommand.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/pressable/QuickCommand.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/view/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/view/MainView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,13 +61,15 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.Run Web">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,7 +119,6 @@
       <option name="presentableId" value="Default" />
       <updated>1608508248993</updated>
       <workItem from="1608508250162" duration="1267000" />
-      <workItem from="1608518966221" duration="18693000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .idea files">
       <created>1608508298971</created>

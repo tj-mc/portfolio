@@ -16,7 +16,9 @@ export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text}) => {
             }}
             style={{
                 // @ts-ignore
-                cursor: 'pointer'
+                cursor: 'pointer',
+                marginRight: 30,
+                marginTop: 10
             }}
         >
             <Text

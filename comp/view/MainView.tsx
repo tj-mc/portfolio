@@ -5,6 +5,7 @@ import {HeaderThree} from "../text/header/HeaderThree";
 import {HeaderTwo} from "../text/header/HeaderTwo";
 import {BodyText} from "../text/BodyText";
 import {QuickCommand} from "../pressable/QuickCommand";
+import {Terminal} from "../Terminal";
 
 export const MainView: FunctionComponent = () => {
     return (
@@ -15,13 +16,7 @@ export const MainView: FunctionComponent = () => {
         >
             <HeaderRow/>
             <QuickCommandRow/>
-            {/*<HeaderOne text={'Tom McIntosh'}/>*/}
-            {/*<HeaderThree text={'Software Developer & Creator'}/>*/}
-            {/*<HeaderTwo text={'Quick Commands'}/>*/}
-            {/*<BodyText*/}
-            {/*    text={'My name is Tom, and I build digital experiences. If you’re interested in building a world-class mobile app, or an eye catching website, I’m always up for a chat.'}/>*/}
-            {/*<QuickCommand text={'resume'} onPress={() => console.log('resume')}/>*/}
-            {/*<Terminal/>*/}
+            <Terminal/>
         </View>
     )
 }
@@ -29,10 +24,15 @@ export const MainView: FunctionComponent = () => {
 
 const QuickCommandRow: FunctionComponent = () => {
     return (
-        <View>
+        <View
+            style={{
+                marginBottom: 20
+            }}
+        >
             <View
                 style={{
-                    marginBottom: 8
+                    marginTop: 20,
+                    marginBottom: 0
                 }}
             >
                 <HeaderTwo text={'Quick Commands'}/>
@@ -42,16 +42,17 @@ const QuickCommandRow: FunctionComponent = () => {
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
-                    justifyContent: 'flex-start'
+                    justifyContent: 'flex-start',
+                    flexWrap: 'wrap'
                 }}
             >
                 <QuickCommand text={'portfolio'} onPress={() => {
                 }}/>
-                <QuickCommand text={'portfolio'} onPress={() => {
+                <QuickCommand text={'experience'} onPress={() => {
                 }}/>
-                <QuickCommand text={'portfolio'} onPress={() => {
+                <QuickCommand text={'open-source'} onPress={() => {
                 }}/>
-                <QuickCommand text={'portfolio'} onPress={() => {
+                <QuickCommand text={'resume'} onPress={() => {
                 }}/>
             </View>
         </View>
