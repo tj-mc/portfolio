@@ -24,7 +24,6 @@ export const PromptLine: FunctionComponent = () => {
                     $
                 </Text>
                 <View style={{width: 5}}/>
-
                 <Input/>
 
             </Text>
@@ -41,8 +40,6 @@ const Input: FunctionComponent = () => {
                 fontSize: 12,
                 color: theme.color.white,
                 borderColor: theme.color.backdrop,
-                // @ts-ignore - RNW
-                outline: 'none'
             }}
             onChangeText={t => {
                 console.log(t)

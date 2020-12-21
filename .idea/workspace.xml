@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="">
+    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="Add expo as local dep for netlify CI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/PromptLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/PromptLine.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comp/pressable/QuickCommand.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/pressable/QuickCommand.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comp/view/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/view/MainView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,19 +60,6 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.Run Web">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Run Android" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -148,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608538605053</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add expo as local dep for netlify CI">
+      <created>1608548478737</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608548478738</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +165,8 @@
     <MESSAGE value="Reformat entry file" />
     <MESSAGE value="Create header components" />
     <MESSAGE value="Create all basic interface elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create all basic interface elements" />
+    <MESSAGE value="Add expo as local dep for netlify CI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add expo as local dep for netlify CI" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

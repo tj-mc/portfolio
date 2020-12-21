@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react'
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {HeaderOne} from "../text/header/HeaderOne";
 import {HeaderThree} from "../text/header/HeaderThree";
 import {HeaderTwo} from "../text/header/HeaderTwo";
@@ -11,12 +11,15 @@ export const MainView: FunctionComponent = () => {
     return (
         <View
             style={{
-                maxWidth: 600
+                maxWidth: 600,
+                height: '100%'
             }}
         >
-            <HeaderRow/>
-            <QuickCommandRow/>
-            <Terminal/>
+            <ScrollView>
+                <HeaderRow/>
+                <QuickCommandRow/>
+                <Terminal/>
+            </ScrollView>
         </View>
     )
 }
