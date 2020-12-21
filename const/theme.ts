@@ -3,8 +3,6 @@ export const theme = {
         primary: {
             light: 'FiraCode_300Light',
             regular: 'FiraCode_400Regular',
-            medium: 'FiraCode_500Medium',
-            semiBold: 'FiraCode_600SemiBold',
             bold: 'FiraCode_700Bold'
         }
     },

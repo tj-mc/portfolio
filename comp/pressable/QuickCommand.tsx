@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Alert, Pressable, Text} from 'react-native'
+import {Pressable, Text} from 'react-native'
 import {theme} from "../../const/theme";
 
 type QuickCommandProps = {
@@ -12,7 +12,7 @@ export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text}) => {
     return (
         <Pressable
             onPress={() => {
-                Alert.alert("hello!", 'yo')
+                console.log('QuickCommand')
             }}
             style={{
                 // @ts-ignore

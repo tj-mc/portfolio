@@ -6,6 +6,7 @@ import {HeaderTwo} from "../text/header/HeaderTwo";
 import {BodyText} from "../text/BodyText";
 import {QuickCommand} from "../pressable/QuickCommand";
 import {Terminal} from "../Terminal";
+import {ContactBlock} from "../contact/ContactBlock";
 
 export const MainView: FunctionComponent = () => {
     return (
@@ -17,6 +18,7 @@ export const MainView: FunctionComponent = () => {
         >
             <ScrollView>
                 <HeaderRow/>
+                <ContactBlock/>
                 <QuickCommandRow/>
                 <Terminal/>
             </ScrollView>
