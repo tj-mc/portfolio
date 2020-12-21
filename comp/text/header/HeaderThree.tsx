@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react'
 
 import {Text, View} from 'react-native'
-import {theme} from "../../const/theme";
+import {theme} from "../../../const/theme";
 
 type HeaderThreeProps = {
     text: string

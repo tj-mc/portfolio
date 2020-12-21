@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-native';
 import AppLoading from "expo-app-loading";
 import {
     FiraCode_300Light,
@@ -9,10 +8,15 @@ import {
     FiraCode_700Bold,
     useFonts
 } from "@expo-google-fonts/fira-code";
-import {theme} from "./const/theme";
-import {HeaderOne} from "./comp/header/HeaderOne";
-import {HeaderThree} from "./comp/header/HeaderThree";
-import {HeaderTwo} from "./comp/header/HeaderTwo";
+import {HeaderOne} from "./comp/text/header/HeaderOne";
+import {HeaderThree} from "./comp/text/header/HeaderThree";
+import {HeaderTwo} from "./comp/text/header/HeaderTwo";
+import {BodyText} from "./comp/text/BodyText";
+import {QuickCommand} from "./comp/pressable/QuickCommand";
+import {PromptLine} from "./comp/PromptLine";
+import {Terminal} from "./comp/Terminal";
+import {InterfaceContainer} from "./comp/InterfaceContainer";
+import {AppContainer} from "./comp/AppContainer";
 
 export default function App() {
 
@@ -29,17 +33,19 @@ export default function App() {
     }
 
     return (
-        <View
-            style={{
-                backgroundColor: theme.color.backdrop,
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}
-        >
-            <HeaderOne text={'Tom McIntosh'}/>
-            <HeaderTwo text={'Quick Commands'}/>
-            <HeaderThree text={'Software Developer & Creative'}/>
-        </View>
+        <AppContainer>
+            <InterfaceContainer>
+                <>
+                    <HeaderOne text={'Tom McIntosh'}/>
+                    <HeaderThree text={'Software Developer & Creative'}/>
+                    <HeaderTwo text={'Quick Commands'}/>
+                    <BodyText
+                        text={'My name is Tom, and I build digital experiences. If you’re interested in building a world-class mobile app, or an eye catching website, I’m always up for a chat.'}/>
+                    <QuickCommand text={'resume'} onPress={() => console.log('resume')}/>
+                    <PromptLine/>
+                    <Terminal/>
+                </>
+            </InterfaceContainer>
+        </AppContainer>
     );
 }

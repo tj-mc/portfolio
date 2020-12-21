@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="Reformat entry file">
-      <change afterPath="$PROJECT_DIR$/comp/header/HeaderOne.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/header/HeaderThree.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/header/HeaderTwo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/const/theme.ts" afterDir="false" />
+    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="Create all basic interface elements">
+      <change afterPath="$PROJECT_DIR$/comp/AppContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/InterfaceContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/PromptLine.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/Terminal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/dev/RedBorder.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/pressable/QuickCommand.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/text/BodyText.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/header/HeaderOne.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/header/HeaderOne.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/header/HeaderThree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/header/HeaderThree.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/header/HeaderTwo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/header/HeaderTwo.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -55,8 +59,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tom\Documents\dev\portfolio\comp" />
+      <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\text" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\text" />
       <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\header" />
     </key>
   </component>
@@ -117,7 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608508248993</updated>
       <workItem from="1608508250162" duration="1267000" />
-      <workItem from="1608518966221" duration="7136000" />
+      <workItem from="1608518966221" duration="11393000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .idea files">
       <created>1608508298971</created>
@@ -133,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608508664258</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create header components">
+      <created>1608534396540</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608534396540</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,9 +165,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Commit .idea files" />
     <MESSAGE value="Reformat entry file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat entry file" />
+    <MESSAGE value="Create header components" />
+    <MESSAGE value="Create all basic interface elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create all basic interface elements" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
