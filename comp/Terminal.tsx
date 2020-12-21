@@ -1,12 +1,14 @@
 import React, {FunctionComponent} from "react"
 import {Text, View} from 'react-native'
 import {theme} from "../const/theme";
+import {PromptLine} from "./PromptLine";
 
 export const Terminal: FunctionComponent = () => {
     return (
         <MainContainer>
             <HeaderBar/>
             <PaddingContainer>
+                <PromptLine/>
             </PaddingContainer>
         </MainContainer>
     )

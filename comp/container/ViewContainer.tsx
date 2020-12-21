@@ -1,14 +1,12 @@
 import React, {FunctionComponent} from 'react'
 import {View} from 'react-native'
-import {theme} from "../const/theme";
+import {theme} from "../../const/theme";
 
-export const AppContainer: FunctionComponent = ({children}) => {
+export const ViewContainer: FunctionComponent = ({children}) => {
     return (
         <View
             style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
+                padding: '5%',
                 backgroundColor: theme.color.backdrop,
             }}
         >

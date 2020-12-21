@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="Create all basic interface elements">
-      <change afterPath="$PROJECT_DIR$/comp/AppContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/InterfaceContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/PromptLine.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/Terminal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/dev/RedBorder.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/pressable/QuickCommand.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/text/BodyText.tsx" afterDir="false" />
+    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/comp/container/FontLoadContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/view/MainView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/header/HeaderOne.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/header/HeaderOne.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/header/HeaderThree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/header/HeaderThree.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/header/HeaderTwo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/header/HeaderTwo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/AppContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/container/AppContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/InterfaceContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/container/ViewContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/Terminal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/Terminal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/text/BodyText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/text/BodyText.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +58,7 @@
       <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\text" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\container" />
       <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\text" />
       <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\header" />
     </key>
@@ -123,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608508248993</updated>
       <workItem from="1608508250162" duration="1267000" />
-      <workItem from="1608518966221" duration="11393000" />
+      <workItem from="1608518966221" duration="18693000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .idea files">
       <created>1608508298971</created>
@@ -146,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608534396540</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Create all basic interface elements">
+      <created>1608538605053</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608538605053</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

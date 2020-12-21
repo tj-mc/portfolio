@@ -4,17 +4,19 @@ import {Text, View} from 'react-native'
 import {theme} from "../../const/theme";
 
 type BodyTextProps = {
-    text: string
+    text: string,
+    textAlign: any
 }
 
-export const BodyText: FunctionComponent<BodyTextProps> = ({text}) => {
+export const BodyText: FunctionComponent<BodyTextProps> = ({text, textAlign = 'left'}) => {
     return (
         <View>
             <Text
                 style={{
                     fontFamily: theme.font.primary.light,
                     fontSize: 12,
-                    color: theme.color.white
+                    color: theme.color.white,
+                    textAlign: textAlign,
                 }}
             >
                 {text}
