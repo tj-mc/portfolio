@@ -90,6 +90,7 @@ const Description: FunctionComponent = () => {
                 minWidth: '40%',
                 maxWidth: '100%',
                 marginLeft: '17%',
+                marginBottom: 20
             }}
         >
             <BodyText

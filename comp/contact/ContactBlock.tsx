@@ -2,6 +2,7 @@ import React, {FunctionComponent} from "react";
 import {Text, View} from 'react-native'
 import {ContactBlockContent} from "./ContactBlockContent";
 import {theme} from "../../const/theme";
+import {Link} from "../pressable/Link";
 
 export const LeftColumn: FunctionComponent = () => {
     return (
@@ -16,12 +17,13 @@ export const LeftColumn: FunctionComponent = () => {
                 ContactBlockContent.map(item => {
                         return (
                             <View
+                                key={item.body}
                                 style={{
                                     display: 'flex',
                                     flexDirection: 'row',
                                     alignItems: 'center',
                                     marginRight: 5,
-                                    marginBottom: item?.spaceBottom || 5
+                                    marginBottom: item?.spaceBottom || 8
                                 }}
                             >
                                 {item.label}
@@ -51,24 +53,27 @@ export const RightColumn: FunctionComponent = () => {
                 ContactBlockContent.map(item => {
                         return (
                             <View
+                                key={item.body}
                                 style={{
                                     display: 'flex',
                                     flexDirection: 'row',
                                     alignItems: 'center',
-                                    marginBottom: item?.spaceBottom || 5
+                                    marginBottom: item?.spaceBottom || 8
                                 }}
                             >
-                                <Text
-                                    style={{
-                                        fontFamily: theme.font.primary.regular,
-                                        color: theme.color.primary,
-                                        fontSize: 12
-                                    }}
-                                >
-                                    {item.body}
-                                </Text>
+                                <Link onPress={() => {
+                                }}>
+                                    <Text
+                                        style={{
+                                            fontFamily: theme.font.primary.regular,
+                                            color: theme.color.primary,
+                                            fontSize: 12
+                                        }}
+                                    >
+                                        {item.body}
+                                    </Text>
+                                </Link>
                             </View>
-
                         )
                     }
                 )
