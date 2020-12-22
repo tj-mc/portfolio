@@ -1,5 +1,6 @@
 import React, {FunctionComponent, useEffect, useRef, useState} from "react";
 import {Animated, Easing, TouchableOpacity} from "react-native";
+import {theme} from "../../const/theme";
 
 export const Link: FunctionComponent<{ onPress: () => void }> = ({onPress, children}) => {
 
@@ -29,23 +30,24 @@ export const Link: FunctionComponent<{ onPress: () => void }> = ({onPress, child
 
 const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
 
-    const width = useRef(new Animated.Value(200)).current
+    const opacity = useRef(new Animated.Value(0)).current
+    const duration = 100
 
     const open = () => {
-        Animated.timing(width, {
+        Animated.timing(opacity, {
             useNativeDriver: true,
-            toValue: 0,
+            toValue: 1,
             easing: Easing.inOut(Easing.ease),
-            duration: 500
+            duration: duration
         }).start()
     }
 
     const close = () => {
-        Animated.timing(width, {
+        Animated.timing(opacity, {
             useNativeDriver: true,
-            toValue: 200,
+            toValue: 0,
             easing: Easing.inOut(Easing.ease),
-            duration: 500
+            duration: duration
         }).start()
     }
 
@@ -53,19 +55,20 @@ const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
         show ? open() : close()
     }, [show])
 
-    const offset = 3
+    const offset = 2
     const bias = 2
 
     return (
         <Animated.View
             style={{
-                opacity: 1,
+                zIndex: -1,
+                opacity: opacity,
                 position: 'absolute',
                 bottom: -offset + bias,
                 height: offset,
-                right: width,
                 left: 0,
-                backgroundColor: 'red'
+                right: 0,
+                backgroundColor: theme.color.secondary
             }}
         />
     )

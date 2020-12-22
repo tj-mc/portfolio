@@ -18,6 +18,6 @@ export const FontLoadContainer: FunctionComponent = ({children}) => {
 
 const BackDrop: FunctionComponent = () => {
     return (
-        <View style={{flex: 0, backgroundColor: theme.color.backdrop}}/>
+        <View style={{flex: 1, backgroundColor: theme.color.backdrop}}/>
     )
 }

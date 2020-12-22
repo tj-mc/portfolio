@@ -61,8 +61,7 @@ export const RightColumn: FunctionComponent = () => {
                                     marginBottom: item?.spaceBottom || 8
                                 }}
                             >
-                                <Link onPress={() => {
-                                }}>
+                                <Link onPress={item.onPress}>
                                     <Text
                                         style={{
                                             fontFamily: theme.font.primary.regular,
