@@ -1,16 +1,19 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import React, {ReactComponentElement} from "react";
 
-type terminalArrayItem = {
+export enum terminalResponse {
+    basic,
+}
+
+export type terminalSliceItem = {
     prompt: string,
-    response: ReactComponentElement<any>
+    response: terminalResponse
 }
 
 export const terminalSlice = createSlice({
     name: 'counter',
-    initialState: [] as Array<terminalArrayItem>,
+    initialState: [] as Array<terminalSliceItem>,
     reducers: {
-        add(state, action: PayloadAction<terminalArrayItem>) {
+        add(state, action: PayloadAction<terminalSliceItem>) {
             state.push(
                 {
                     prompt: action.payload.prompt,

@@ -1,8 +1,13 @@
-import React, {FunctionComponent} from 'react'
+import React, {FunctionComponent as FC, useRef, useState} from 'react'
 import {Platform, Text, TextInput, View} from 'react-native'
 import {theme} from "../const/theme";
+import {useDispatch} from "react-redux";
+import {terminalResponse, terminalSlice} from "../store/terminalSlice";
 
-export const PromptLine: FunctionComponent = () => {
+export const PromptLine: FC = () => {
+
+    const dispatch = useDispatch()
+
     return (
         <View>
             <Text
@@ -23,17 +28,42 @@ export const PromptLine: FunctionComponent = () => {
                 <Text style={{color: theme.color.white}}>
                     $
                 </Text>
+
                 <View style={{width: 5}}/>
-                <Input/>
+
+                <Input
+                    onSave={textInput => {
+                        dispatch(
+                            terminalSlice.actions.add({
+                                prompt: textInput,
+                                response: terminalResponse.basic
+                            })
+                        )
+                    }}
+                />
 
             </Text>
         </View>
     )
 }
 
-const Input: FunctionComponent = () => {
+const Input: FC<{ onSave: (textInput: string) => void }> = props => {
+
+    const [value, setValue] = useState('')
+    const inputRef = useRef(null)
+
     return (
         <TextInput
+            {...{value}}
+            onSubmitEditing={() => {
+                props.onSave(value)
+                setValue('')
+                setTimeout(() => {
+                    // @ts-ignore - This ref will not be null
+                    inputRef?.current.focus()
+                }, 50)
+            }}
+            ref={inputRef}
             autoFocus
             style={
                 [
@@ -47,9 +77,7 @@ const Input: FunctionComponent = () => {
                     Platform.OS === 'web' ? {outline: 'none'} : {}
                 ]
             }
-            onChangeText={t => {
-                console.log(t)
-            }}
+            onChangeText={v => setValue(v)}
         />
     )
 }

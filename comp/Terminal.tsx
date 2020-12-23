@@ -1,21 +1,35 @@
-import React, {FunctionComponent} from "react"
-import {Text, View} from 'react-native'
+import React, {FunctionComponent as FC} from "react"
+import {FlatList, Text, View} from 'react-native'
 import {theme} from "../const/theme";
 import {PromptLine} from "./PromptLine";
+import {useSelector} from "react-redux";
+import {RootState} from "../store";
 
-export const Terminal: FunctionComponent = () => {
+export const Terminal: FC = () => {
     return (
         <MainContainer>
             <HeaderBar/>
             <PaddingContainer>
+                <History/>
                 <PromptLine/>
             </PaddingContainer>
         </MainContainer>
     )
 }
 
+const History: FC = () => {
 
-const Tab: FunctionComponent = () => {
+    const terminal = useSelector((state: RootState) => state.terminal)
+
+    return (
+        <View>
+            <FlatList data={terminal} renderItem={({item}) => <>{item.response}</>}/>
+        </View>
+    )
+}
+
+
+const Tab: FC = () => {
     return (
 
         <View
@@ -43,7 +57,7 @@ const Tab: FunctionComponent = () => {
 
 }
 
-const HeaderBar: FunctionComponent = () => {
+const HeaderBar: FC = () => {
     return (
         <View
             style={{
@@ -60,7 +74,7 @@ const HeaderBar: FunctionComponent = () => {
 }
 
 
-const PaddingContainer: FunctionComponent = ({children}) => {
+const PaddingContainer: FC = ({children}) => {
     return (
         <View
             style={{
@@ -73,7 +87,7 @@ const PaddingContainer: FunctionComponent = ({children}) => {
     )
 }
 
-const MainContainer: FunctionComponent = ({children}) => {
+const MainContainer: FC = ({children}) => {
     return (
         <View
             style={{
