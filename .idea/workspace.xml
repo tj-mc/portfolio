@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="Increase font sizes">
-      <change afterPath="$PROJECT_DIR$/comp/Template.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comp/Toast.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/const/directions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/copy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/linking.ts" afterDir="false" />
+    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="Added In-place Toast popup">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/contact/ContactBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/contact/ContactBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/contact/ContactBlockContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/contact/ContactBlockContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/container/AppContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/container/AppContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +194,8 @@
     <MESSAGE value="Add expo as local dep for netlify CI" />
     <MESSAGE value="Fix backdrop on load and add link actions" />
     <MESSAGE value="Increase font sizes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increase font sizes" />
+    <MESSAGE value="Added In-place Toast popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added In-place Toast popup" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
