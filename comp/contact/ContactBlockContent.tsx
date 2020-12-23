@@ -3,7 +3,7 @@ import {AntDesign} from "@expo/vector-icons";
 import React from "react";
 import {theme} from "../../const/theme";
 import {openURL} from "../../func/linking";
-import {copyAndNotify} from "../../func/copy";
+import {copy} from "../../func/copy";
 
 const iconSize = 16
 const spacerSize = 20
@@ -27,12 +27,12 @@ export const ContactBlockContent = [
     {
         label: <ContactTextIcon text={'@'}/>,
         body: 'tom_mcintosh@outlook.com',
-        onPress: () => copyAndNotify('test'),
+        onPress: () => copy('tom_mcintosh@outlook.com'),
         // Will create a space below this icon,
         // otherwise use default size.
         spaceBottom: spacerSize,
         useToast: true,
-        toastText: 'Copied',
+        toastText: 'Copied!',
     },
 
     {

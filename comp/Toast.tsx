@@ -9,14 +9,15 @@ export const Toast: FC<{ text: string, arrow: Directions }> = props => {
         <View
             style={{
                 padding: 5,
-                // backgroundColor: 'red'
             }}
         >
 
             <View
                 style={{
                     borderWidth: 2,
+                    zIndex: 1,
                     borderColor: theme.color.secondary,
+                    backgroundColor: theme.color.backdrop,
                     paddingVertical: 5,
                     paddingHorizontal: 15,
                     shadowColor: "#000",
@@ -40,19 +41,50 @@ export const Toast: FC<{ text: string, arrow: Directions }> = props => {
                     {props.text}
                 </Text>
             </View>
-            <View
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    bottom: 0,
-                    justifyContent: 'center',
-                    left: '-1%',
-
-                }}
-            >
-                <Octicons name="triangle-left" size={16} color={theme.color.secondary}/>
-            </View>
+            <ArrowModeSelect direction={props.arrow}/>
         </View>
     )
 }
 
+
+const ArrowModeSelect: FC<{ direction: Directions }> = props => {
+    return (
+        <>
+            {props.direction === Directions.left && <LeftMode/>}
+            {props.direction === Directions.top && <TopMode/>}
+        </>
+    )
+}
+
+const TopMode: FC = () => {
+    return (
+        <View
+            style={{
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                justifyContent: 'center',
+                alignItems: 'center',
+                top: '-10%',
+            }}
+        >
+            <Octicons name="triangle-up" size={16} color={theme.color.secondary}/>
+        </View>
+    )
+}
+
+const LeftMode: FC = () => {
+    return (
+        <View
+            style={{
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                justifyContent: 'center',
+                left: '-1%',
+            }}
+        >
+            <Octicons name="triangle-left" size={16} color={theme.color.secondary}/>
+        </View>
+    )
+}

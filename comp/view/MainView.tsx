@@ -89,7 +89,7 @@ const Description: FunctionComponent = () => {
                 flex: 1,
                 minWidth: '40%',
                 maxWidth: '100%',
-                marginLeft: '17%',
+                marginLeft: '15%',
                 marginBottom: 20
             }}
         >
