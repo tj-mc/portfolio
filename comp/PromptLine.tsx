@@ -8,7 +8,7 @@ export const PromptLine: FunctionComponent = () => {
             <Text
                 style={{
                     fontFamily: theme.font.primary.regular,
-                    fontSize: 12,
+                    fontSize: 14,
                 }}
             >
                 <Text style={{color: theme.color.primary}}>
@@ -39,7 +39,7 @@ const Input: FunctionComponent = () => {
                 [
                     {
                         fontFamily: theme.font.primary.regular,
-                        fontSize: 12,
+                        fontSize: 14,
                         color: theme.color.white,
                         borderColor: theme.color.backdrop,
                     },

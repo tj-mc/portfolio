@@ -4,7 +4,7 @@ import React from "react";
 import {theme} from "../../const/theme";
 import {Linking} from "react-native";
 
-const iconSize = 14
+const iconSize = 16
 const spacerSize = 20
 
 const open = (url: string) => {

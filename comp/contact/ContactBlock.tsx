@@ -31,7 +31,7 @@ export const LeftColumn: FunctionComponent = () => {
                                     style={{
                                         fontFamily: theme.font.primary.bold,
                                         color: theme.color.white,
-                                        fontSize: 12
+                                        fontSize: 14
                                     }}
                                 >
                                     :
@@ -66,7 +66,7 @@ export const RightColumn: FunctionComponent = () => {
                                         style={{
                                             fontFamily: theme.font.primary.regular,
                                             color: theme.color.primary,
-                                            fontSize: 12
+                                            fontSize: 14
                                         }}
                                     >
                                         {item.body}

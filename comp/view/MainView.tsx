@@ -12,7 +12,7 @@ export const MainView: FunctionComponent = () => {
     return (
         <View
             style={{
-                maxWidth: 600,
+                maxWidth: 670,
                 height: '100%'
             }}
         >

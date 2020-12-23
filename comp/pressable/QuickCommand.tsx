@@ -22,7 +22,7 @@ export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text}) => {
                 <Text
                     style={{
                         fontFamily: theme.font.primary.bold,
-                        fontSize: 14,
+                        fontSize: 16,
                         color: theme.color.primary
                     }}
                 >

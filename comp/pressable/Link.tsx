@@ -16,7 +16,10 @@ export const Link: FunctionComponent<{ onPress: () => void }> = ({onPress, child
             }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            onPress={onPress}
+            onPress={() => {
+                onPress()
+                setHovered(false)
+            }}
             style={{
                 // @ts-ignore
                 cursor: 'pointer',
@@ -31,7 +34,7 @@ export const Link: FunctionComponent<{ onPress: () => void }> = ({onPress, child
 const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
 
     const opacity = useRef(new Animated.Value(0)).current
-    const duration = 100
+    const duration = 80
 
     const open = () => {
         Animated.timing(opacity, {

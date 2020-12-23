@@ -14,7 +14,7 @@ export const BodyText: FunctionComponent<BodyTextProps> = ({text, textAlign = 'l
             <Text
                 style={{
                     fontFamily: theme.font.primary.light,
-                    fontSize: 12,
+                    fontSize: 14,
                     color: theme.color.white,
                     textAlign: textAlign,
                 }}

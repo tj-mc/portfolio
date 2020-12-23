@@ -13,7 +13,7 @@ export const HeaderOne: FunctionComponent<HeaderOneProps> = ({text}) => {
             <Text
                 style={{
                     fontFamily: theme.font.primary.bold,
-                    fontSize: 24,
+                    fontSize: 26,
                     color: theme.color.white
                 }}
             >

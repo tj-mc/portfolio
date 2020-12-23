@@ -11,7 +11,7 @@ export const ContactTextIcon: FunctionComponent<{ text: string }> = ({text}) => 
         <Text
             style={{
                 fontFamily: theme.font.primary.bold,
-                fontSize: 12,
+                fontSize: 14,
                 color: theme.color.white
             }}
         >

@@ -13,7 +13,7 @@ export const HeaderTwo: FunctionComponent<HeaderTwoProps> = ({text}) => {
             <Text
                 style={{
                     fontFamily: theme.font.primary.regular,
-                    fontSize: 18,
+                    fontSize: 20,
                     color: theme.color.white
                 }}
             >

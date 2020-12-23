@@ -26,7 +26,7 @@ const Tab: FunctionComponent = () => {
             <Text
                 style={{
                     fontFamily: theme.font.primary.bold,
-                    fontSize: 10,
+                    fontSize: 12,
                     color: theme.color.gray.medium,
                     marginLeft: 10,
                     marginRight: 10,
@@ -65,7 +65,7 @@ const PaddingContainer: FunctionComponent = ({children}) => {
         <View
             style={{
                 padding: 6,
-                minHeight: 300
+                minHeight: 330
             }}
         >
             {children}

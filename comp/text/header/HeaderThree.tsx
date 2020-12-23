@@ -13,7 +13,7 @@ export const HeaderThree: FunctionComponent<HeaderThreeProps> = ({text}) => {
             <Text
                 style={{
                     fontFamily: theme.font.primary.light,
-                    fontSize: 14,
+                    fontSize: 16,
                     color: theme.color.white
                 }}
             >
