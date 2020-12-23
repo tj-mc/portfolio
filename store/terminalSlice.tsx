@@ -1,7 +1,11 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export enum terminalResponse {
-    basic,
+    portfolio = 'portfolio',
+    experience = 'experience',
+    openSource = 'open-source',
+    resume = 'resume',
+    notFound = 'not-found'
 }
 
 export type terminalSliceItem = {

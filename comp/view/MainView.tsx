@@ -7,6 +7,7 @@ import {BodyText} from "../text/BodyText";
 import {QuickCommand} from "../pressable/QuickCommand";
 import {Terminal} from "../Terminal";
 import {ContactBlock} from "../contact/ContactBlock";
+import {terminalResponse} from "../../store/terminalSlice";
 
 export const MainView: FunctionComponent = () => {
     return (
@@ -51,14 +52,10 @@ const QuickCommandRow: FunctionComponent = () => {
                     flexWrap: 'wrap'
                 }}
             >
-                <QuickCommand text={'portfolio'} onPress={() => {
-                }}/>
-                <QuickCommand text={'experience'} onPress={() => {
-                }}/>
-                <QuickCommand text={'open-source'} onPress={() => {
-                }}/>
-                <QuickCommand text={'resume'} onPress={() => {
-                }}/>
+                <QuickCommand text={'portfolio'} response={terminalResponse.portfolio}/>
+                <QuickCommand text={'experience'} response={terminalResponse.experience}/>
+                <QuickCommand text={'open-source'} response={terminalResponse.openSource}/>
+                <QuickCommand text={'resume'} response={terminalResponse.resume}/>
             </View>
         </View>
     )

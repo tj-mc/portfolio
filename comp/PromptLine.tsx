@@ -2,7 +2,8 @@ import React, {FunctionComponent as FC, useRef, useState} from 'react'
 import {Platform, Text, TextInput, View} from 'react-native'
 import {theme} from "../const/theme";
 import {useDispatch} from "react-redux";
-import {terminalResponse, terminalSlice} from "../store/terminalSlice";
+import {terminalSlice} from "../store/terminalSlice";
+import {interpretPromptInput} from "../func/terminal/interpretPromptInput";
 
 export const PromptLine: FC = () => {
 
@@ -36,7 +37,7 @@ export const PromptLine: FC = () => {
                         dispatch(
                             terminalSlice.actions.add({
                                 prompt: textInput,
-                                response: terminalResponse.basic
+                                response: interpretPromptInput(textInput)
                             })
                         )
                     }}

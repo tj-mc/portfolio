@@ -23,7 +23,26 @@ const History: FC = () => {
 
     return (
         <View>
-            <FlatList data={terminal} renderItem={({item}) => <>{item.response}</>}/>
+            <FlatList
+                keyExtractor={(item, index) => String(index)}
+                data={terminal}
+                renderItem={({item}) => <TempText text={item.response}/>}
+            />
+        </View>
+    )
+}
+
+const TempText: FC<{ text: string }> = props => {
+    return (
+        <View>
+            <Text
+                style={{
+                    fontFamily: theme.font.primary.regular,
+                    color: theme.color.white
+                }}
+            >
+                {props.text}
+            </Text>
         </View>
     )
 }
