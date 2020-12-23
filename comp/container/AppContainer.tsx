@@ -12,7 +12,7 @@ export const AppContainer: FunctionComponent = ({children}) => {
                 backgroundColor: theme.color.backdrop,
             }}
         >
-            {children}
+                {children}
         </View>
     )
 }

@@ -3,6 +3,8 @@ import {Text, View} from 'react-native'
 import {ContactBlockContent} from "./ContactBlockContent";
 import {theme} from "../../const/theme";
 import {Link} from "../pressable/Link";
+import {Toast} from "../Toast";
+import {Directions} from "../../const/directions";
 
 export const LeftColumn: FunctionComponent = () => {
     return (
@@ -72,6 +74,20 @@ export const RightColumn: FunctionComponent = () => {
                                         {item.body}
                                     </Text>
                                 </Link>
+                                {
+                                    item?.useToast &&
+                                    <View
+                                        style={{
+                                            position: 'absolute',
+                                            left: '105%'
+                                        }}
+                                    >
+                                        <Toast
+                                            text={'Copied'}
+                                            arrow={Directions.left}
+                                        />
+                                    </View>
+                                }
                             </View>
                         )
                     }

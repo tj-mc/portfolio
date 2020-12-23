@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="">
+    <list default="true" id="982b4216-c7bc-444f-af2b-a43b59ef851e" name="Default Changelist" comment="Increase font sizes">
+      <change afterPath="$PROJECT_DIR$/comp/Template.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comp/Toast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/const/directions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/copy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/linking.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp/container/FontLoadContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/container/FontLoadContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/contact/ContactBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/contact/ContactBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/contact/ContactBlockContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/contact/ContactBlockContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp/container/AppContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/comp/container/AppContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -57,17 +63,18 @@
       <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\text" />
       <recent name="C:\Users\Tom\Documents\dev\portfolio\comp\header" />
     </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/func/linking.ts" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.Run Web">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,14 +160,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608548478738</updated>
     </task>
-    <task id="LOCAL-00006" summary="Create contact block">
-      <created>1608594830990</created>
+    <task id="LOCAL-00006" summary="Fix backdrop on load and add link actions">
+      <created>1608608199988</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1608594830990</updated>
+      <updated>1608608199988</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Increase font sizes">
+      <created>1608681639506</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608681639506</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,8 +199,9 @@
     <MESSAGE value="Create header components" />
     <MESSAGE value="Create all basic interface elements" />
     <MESSAGE value="Add expo as local dep for netlify CI" />
-    <MESSAGE value="Create contact block" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create contact block" />
+    <MESSAGE value="Fix backdrop on load and add link actions" />
+    <MESSAGE value="Increase font sizes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Increase font sizes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
