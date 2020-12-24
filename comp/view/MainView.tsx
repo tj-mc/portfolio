@@ -5,7 +5,7 @@ import {HeaderThree} from "../text/header/HeaderThree";
 import {HeaderTwo} from "../text/header/HeaderTwo";
 import {BodyText} from "../text/BodyText";
 import {QuickCommand} from "../pressable/QuickCommand";
-import {Terminal} from "../Terminal";
+import {Terminal} from "../terminal/Terminal";
 import {ContactBlock} from "../contact/ContactBlock";
 import {terminalResponse} from "../../store/terminalSlice";
 

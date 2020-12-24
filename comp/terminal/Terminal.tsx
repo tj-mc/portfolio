@@ -1,9 +1,11 @@
-import React, {FunctionComponent as FC} from "react"
+import React, {FunctionComponent as FC, ReactComponentElement} from "react"
 import {FlatList, Text, View} from 'react-native'
-import {theme} from "../const/theme";
-import {PromptLine} from "./PromptLine";
+import {theme} from "../../const/theme";
+import {PromptLine} from "../PromptLine";
 import {useSelector} from "react-redux";
-import {RootState} from "../store";
+import {RootState} from "../../store";
+import {getResponseComponent} from "../../func/terminal/getResponseComponent";
+import {terminalSliceItem} from "../../store/terminalSlice";
 
 export const Terminal: FC = () => {
     return (
@@ -21,32 +23,24 @@ const History: FC = () => {
 
     const terminal = useSelector((state: RootState) => state.terminal)
 
+    const render = (item: terminalSliceItem, index: number): ReactComponentElement<any> => {
+        if (index > terminal.length - 10) {
+            return getResponseComponent(item.prompt, item.response)
+        } else {
+            return <></>
+        }
+    }
+
     return (
         <View>
             <FlatList
                 keyExtractor={(item, index) => String(index)}
                 data={terminal}
-                renderItem={({item}) => <TempText text={item.response}/>}
+                renderItem={({item, index}) => render(item, index)}
             />
         </View>
     )
 }
-
-const TempText: FC<{ text: string }> = props => {
-    return (
-        <View>
-            <Text
-                style={{
-                    fontFamily: theme.font.primary.regular,
-                    color: theme.color.white
-                }}
-            >
-                {props.text}
-            </Text>
-        </View>
-    )
-}
-
 
 const Tab: FC = () => {
     return (

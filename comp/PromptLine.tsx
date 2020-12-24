@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {terminalSlice} from "../store/terminalSlice";
 import {interpretPromptInput} from "../func/terminal/interpretPromptInput";
 
-export const PromptLine: FC = () => {
+export const PromptLine: FC<{ frozenValue?: string }> = props => {
 
     const dispatch = useDispatch()
 
@@ -33,6 +33,7 @@ export const PromptLine: FC = () => {
                 <View style={{width: 5}}/>
 
                 <Input
+                    frozenValue={props.frozenValue}
                     onSave={textInput => {
                         dispatch(
                             terminalSlice.actions.add({
@@ -48,9 +49,9 @@ export const PromptLine: FC = () => {
     )
 }
 
-const Input: FC<{ onSave: (textInput: string) => void }> = props => {
+const Input: FC<{ onSave: (textInput: string) => void, frozenValue?: string }> = props => {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState(props.frozenValue || '')
     const inputRef = useRef(null)
 
     return (
@@ -62,9 +63,10 @@ const Input: FC<{ onSave: (textInput: string) => void }> = props => {
                 setTimeout(() => {
                     // @ts-ignore - This ref will not be null
                     inputRef?.current.focus()
-                }, 50)
+                }, 10)
             }}
             ref={inputRef}
+            editable={Boolean(props.frozenValue === undefined)}
             autoFocus
             style={
                 [
@@ -78,7 +80,11 @@ const Input: FC<{ onSave: (textInput: string) => void }> = props => {
                     Platform.OS === 'web' ? {outline: 'none'} : {}
                 ]
             }
-            onChangeText={v => setValue(v)}
+            onChangeText={v => {
+                if (!props.frozenValue) {
+                    setValue(v)
+                }
+            }}
         />
     )
 }
