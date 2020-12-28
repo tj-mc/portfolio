@@ -12,6 +12,7 @@ export const theme = {
         backdrop: '#292929',
         white: '#FFFFFF',
         gray: {
+            card: '#454545',
             medium: '#ACACAC'
         }
     }

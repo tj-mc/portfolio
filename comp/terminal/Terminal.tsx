@@ -24,7 +24,7 @@ const History: FC = () => {
     const terminal = useSelector((state: RootState) => state.terminal)
 
     const render = (item: terminalSliceItem, index: number): ReactComponentElement<any> => {
-        if (index > terminal.length - 10) {
+        if (index > terminal.length - 2) {
             return getResponseComponent(item.prompt, item.response)
         } else {
             return <></>

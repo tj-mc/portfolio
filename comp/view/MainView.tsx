@@ -52,7 +52,7 @@ const QuickCommandRow: FunctionComponent = () => {
                     flexWrap: 'wrap'
                 }}
             >
-                <QuickCommand text={'blog'} response={terminalResponse.publications}/>
+                <QuickCommand text={'blog'} response={terminalResponse.blog}/>
                 <QuickCommand text={'portfolio'} response={terminalResponse.portfolio}/>
                 <QuickCommand text={'open-source'} response={terminalResponse.openSource}/>
                 <QuickCommand text={'resume'} response={terminalResponse.resume}/>
@@ -111,7 +111,7 @@ const Title: FunctionComponent = () => {
         >
             <HeaderOne text={'Tom McIntosh'}/>
             <View style={{height: 5}}/>
-            <HeaderThree text={'App Developer & Creator'}/>
+            <HeaderThree text={'Software Developer & Creator'}/>
         </View>
     )
 }

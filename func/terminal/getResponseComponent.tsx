@@ -18,7 +18,7 @@ export const getResponseComponent = (prompt: string, response: terminalResponse)
                 </ResponseContainer>
             )
 
-        case terminalResponse.publications:
+        case terminalResponse.blog:
             return (
                 <ResponseContainer prompt={prompt}>
                     <PublicationsResponse/>

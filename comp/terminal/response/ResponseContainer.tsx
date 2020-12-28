@@ -1,6 +1,5 @@
 import React, {FunctionComponent as FC} from "react";
 import {View} from 'react-native';
-import {PromptLine} from "../../PromptLine";
 
 /**
  * The response container just prepends the prompt line
@@ -9,7 +8,7 @@ import {PromptLine} from "../../PromptLine";
 export const ResponseContainer: FC<{ prompt: string }> = props => {
     return (
         <>
-            <PromptLine frozenValue={props.prompt}/>
+            {/*<PromptLine frozenValue={props.prompt}/>*/}
             <>
                 {props.children}
             </>

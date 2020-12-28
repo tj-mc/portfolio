@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export enum terminalResponse {
     portfolio = 'portfolio',
-    publications = 'publications',
+    blog = 'blog',
     openSource = 'open-source',
     resume = 'resume',
     notFound = 'not-found'
@@ -14,7 +14,7 @@ export type terminalSliceItem = {
 }
 
 export const terminalSlice = createSlice({
-    name: 'counter',
+    name: 'terminal',
     initialState: [] as Array<terminalSliceItem>,
     reducers: {
         add(state, action: PayloadAction<terminalSliceItem>) {
