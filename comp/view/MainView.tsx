@@ -106,7 +106,7 @@ const Title: FunctionComponent = () => {
                 flexDirection: 'column',
                 alignItems: 'flex-start',
                 flexShrink: 1,
-                marginBottom: 25
+                marginBottom: 25,
             }}
         >
             <HeaderOne text={'Tom McIntosh'}/>

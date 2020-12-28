@@ -1,5 +1,5 @@
-import React, {FunctionComponent as FC, ReactComponentElement} from "react"
-import {FlatList, Text, View} from 'react-native'
+import React, {FunctionComponent as FC, ReactComponentElement, useEffect, useRef} from "react"
+import {Animated, FlatList, Text, View} from 'react-native'
 import {theme} from "../../const/theme";
 import {PromptLine} from "../PromptLine";
 import {useSelector} from "react-redux";
@@ -101,15 +101,53 @@ const PaddingContainer: FC = ({children}) => {
 }
 
 const MainContainer: FC = ({children}) => {
+
+    const x = useRef(new Animated.Value(0)).current;
+    const y = useRef(new Animated.Value(0)).current;
+
+    const anim = () => {
+        Animated.spring(x, {
+            useNativeDriver: true,
+            tension: 60,
+            overshootClamping: true,
+            delay: 0,
+            toValue: 1,
+            isInteraction: false
+        }).start()
+
+        Animated.spring(y, {
+            useNativeDriver: true,
+            tension: 3,
+            overshootClamping: true,
+            delay: 100,
+            toValue: 1,
+            isInteraction: false
+        }).start()
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            anim()
+        }, 1500)
+    }, [])
+
     return (
-        <View
+        <Animated.View
             style={{
                 width: '100%',
                 borderColor: theme.color.secondary,
                 borderWidth: 2,
+                transform: [
+                    {
+                        scaleX: x
+                    },
+                    {
+                        scaleY: y
+                    }
+                ]
             }}
         >
             {children}
-        </View>
+        </Animated.View>
     )
 }
