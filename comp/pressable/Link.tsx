@@ -2,7 +2,11 @@ import React, {FunctionComponent, useEffect, useRef, useState} from "react";
 import {Animated, Easing, TouchableOpacity} from "react-native";
 import {theme} from "../../const/theme";
 
-export const Link: FunctionComponent<{ onPress: () => void }> = ({onPress, children}) => {
+export const Link: FunctionComponent<{ onPress: () => void, useUnderline?: boolean }> = ({
+                                                                                             onPress,
+                                                                                             children,
+                                                                                             useUnderline = true
+                                                                                         }) => {
 
     const [hovered, setHovered] = useState(false)
 
@@ -25,7 +29,7 @@ export const Link: FunctionComponent<{ onPress: () => void }> = ({onPress, child
                 cursor: 'pointer',
             }}
         >
-            <Underline show={hovered}/>
+            <Underline show={hovered && useUnderline}/>
             {children}
         </TouchableOpacity>
     )
@@ -35,6 +39,7 @@ const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
 
     const opacity = useRef(new Animated.Value(0)).current
     const duration = 80
+    const outDuration = 250
 
     const open = () => {
         Animated.timing(opacity, {
@@ -50,7 +55,7 @@ const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
             useNativeDriver: true,
             toValue: 0,
             easing: Easing.inOut(Easing.ease),
-            duration: duration
+            duration: outDuration
         }).start()
     }
 

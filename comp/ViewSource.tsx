@@ -51,9 +51,12 @@ export const ViewSource: FC<{}> = () => {
                         onMouseEnter={() => show()}
                         onMouseLeave={() => hide()}
                     >
-                        <Link onPress={() => {
-                            open('https://github.com/tj-mc/portfolio')
-                        }}>
+                        <Link
+                            useUnderline={false}
+                            onPress={() => {
+                                open('https://github.com/tj-mc/portfolio')
+                            }}
+                        >
                             <Text
                                 style={{
                                     fontFamily: theme.font.primary.regular,

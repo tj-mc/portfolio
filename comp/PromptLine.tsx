@@ -14,7 +14,7 @@ export const PromptLine: FC<{ frozenValue?: string }> = props => {
             <Text
                 style={{
                     fontFamily: theme.font.primary.regular,
-                    fontSize: 14,
+                    fontSize: 16,
                 }}
             >
                 <Text style={{color: theme.color.primary}}>
@@ -72,7 +72,7 @@ const Input: FC<{ onSave: (textInput: string) => void, frozenValue?: string }> =
                 [
                     {
                         fontFamily: theme.font.primary.regular,
-                        fontSize: 14,
+                        fontSize: 16,
                         color: theme.color.white,
                         borderColor: theme.color.backdrop,
                     },
