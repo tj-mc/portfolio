@@ -65,8 +65,6 @@ const Intro: FC<{}> = props => {
                     marginBottom: 5
                 }}
             >
-                I find the best way to solidify my understanding of a topic is to write about it. This causes to
-                question my own assumptions, and reveals gaps in my knowledge.
             </Text>
         </View>
     )
