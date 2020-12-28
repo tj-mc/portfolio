@@ -1,5 +1,5 @@
 import {ContactTextIcon} from "./ContactTextIcon";
-import {AntDesign} from "@expo/vector-icons";
+import {AntDesign, Fontisto} from "@expo/vector-icons";
 import React from "react";
 import {theme} from "../../const/theme";
 import {openURL} from "../../func/linking";
@@ -9,14 +9,14 @@ const iconSize = 16
 const spacerSize = 20
 
 export const ContactBlockContent = [
-    {
-        // The left, white icon
-        label: <ContactTextIcon text={'www'}/>,
-        // The primary color text content
-        body: 'tjmc.dev',
-        // What to do when pressed
-        onPress: () => openURL('https://tjmc.dev')
-    },
+    // {
+    //     // The left, white icon
+    //     label: <ContactTextIcon text={'www'}/>,
+    //     // The primary color text content
+    //     body: 'tjmc.dev',
+    //     // What to do when pressed
+    //     onPress: () => openURL('https://tjmc.dev')
+    // },
 
     {
         label: <ContactTextIcon text={'ph'}/>,
@@ -36,6 +36,11 @@ export const ContactBlockContent = [
     },
 
     {
+        label: <Fontisto name="medium" size={iconSize} color={theme.color.white}/>,
+        body: 'tjmc.medium.com',
+        onPress: () => openURL('https://tjmc.medium.com')
+    },
+    {
         label: <AntDesign name="twitter" size={iconSize} color={theme.color.white}/>,
         body: 'tjmc_dev',
         onPress: () => openURL('https://twitter.com/tjmc_dev')
@@ -45,6 +50,7 @@ export const ContactBlockContent = [
         label: <AntDesign name="github" size={iconSize} color={theme.color.white}/>,
         body: 'tj-mc',
         onPress: () => openURL('https://github.com/tj-mc')
-    }
+    },
+
 ]
 

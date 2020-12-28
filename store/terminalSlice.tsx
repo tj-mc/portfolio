@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export enum terminalResponse {
     portfolio = 'portfolio',
-    experience = 'experience',
+    publications = 'publications',
     openSource = 'open-source',
     resume = 'resume',
     notFound = 'not-found'

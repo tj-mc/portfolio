@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "portfolio",
+    "name": "Tom McIntosh | Brisbane App Developer - Memorable Digital Experiences",
     "slug": "portfolio",
     "version": "1.0.0",
+    "description": "Looking for an app or website? I build digital experiences that your clients will remember. Choose a Brisbane based developer for your important web and mobile projects.",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFFFFF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

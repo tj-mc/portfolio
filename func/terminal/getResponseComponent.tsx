@@ -4,7 +4,7 @@ import {NotFoundResponse} from "../../comp/terminal/response/NotFoundResponse";
 import {ResponseContainer} from "../../comp/terminal/response/ResponseContainer";
 import {ResumeResponse} from "../../comp/terminal/response/ResumeReponse";
 import {PortfolioResponse} from "../../comp/terminal/response/PortfolioResponse";
-import {ExperienceResponse} from "../../comp/terminal/response/ExperienceResponse";
+import {PublicationsResponse} from "../../comp/terminal/response/PublicationsResponse";
 import {OpenSourceResponse} from "../../comp/terminal/response/OpenSourceResponse";
 
 export const getResponseComponent = (prompt: string, response: terminalResponse): ReactComponentElement<any> => {
@@ -18,10 +18,10 @@ export const getResponseComponent = (prompt: string, response: terminalResponse)
                 </ResponseContainer>
             )
 
-        case terminalResponse.experience:
+        case terminalResponse.publications:
             return (
                 <ResponseContainer prompt={prompt}>
-                    <ExperienceResponse/>
+                    <PublicationsResponse/>
                 </ResponseContainer>
             )
 

@@ -2,7 +2,7 @@ import React, {FunctionComponent as FC, useEffect} from "react";
 import {Text, View} from 'react-native';
 import {theme} from "../../../const/theme";
 
-export const ExperienceResponse: FC<{}> = () => {
+export const PublicationsResponse: FC<{}> = () => {
 
     useEffect(() => {
     }, [])
@@ -15,7 +15,7 @@ export const ExperienceResponse: FC<{}> = () => {
                     color: theme.color.white
                 }}
             >
-                Experience
+                Publications
             </Text>
         </View>
     )
