@@ -42,7 +42,7 @@ const RocketAnimation: FunctionComponent<{}> = props => {
                     duration: 4000
                 }).start()
 
-            }, 500)
+            }, 250)
 
         }
     }, [visible])

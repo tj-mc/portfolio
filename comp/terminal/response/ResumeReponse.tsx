@@ -3,6 +3,7 @@ import {Text, View} from 'react-native';
 import {theme} from "../../../const/theme";
 import {rocketSlice} from "../../../store/rocketSlice";
 import {useDispatch} from "react-redux";
+import {HeaderTwo} from "../../text/header/HeaderTwo";
 
 export const ResumeResponse: FC<{}> = () => {
 
@@ -10,11 +11,8 @@ export const ResumeResponse: FC<{}> = () => {
     }, [])
 
     return (
-        <View
-            style={{
-                margin: 10
-            }}
-        >
+        <View>
+            <HeaderTwo text={'Resume'}/>
             <ContentContainer/>
         </View>
     )

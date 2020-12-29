@@ -91,7 +91,7 @@ const PaddingContainer: FC = ({children}) => {
     return (
         <View
             style={{
-                padding: 6,
+                padding: 15,
                 minHeight: 330
             }}
         >

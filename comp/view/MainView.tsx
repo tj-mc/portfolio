@@ -52,10 +52,10 @@ const QuickCommandRow: FunctionComponent = () => {
                     flexWrap: 'wrap'
                 }}
             >
-                <QuickCommand text={'blog'} response={terminalResponse.blog}/>
+                <QuickCommand text={'skills'} response={terminalResponse.skills}/>
                 <QuickCommand text={'portfolio'} response={terminalResponse.portfolio}/>
-                <QuickCommand text={'open-source'} response={terminalResponse.openSource}/>
                 <QuickCommand text={'resume'} response={terminalResponse.resume}/>
+                <QuickCommand text={'blog'} response={terminalResponse.blog}/>
             </View>
         </View>
     )

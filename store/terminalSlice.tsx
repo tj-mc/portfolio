@@ -5,7 +5,8 @@ export enum terminalResponse {
     blog = 'blog',
     openSource = 'open-source',
     resume = 'resume',
-    notFound = 'not-found'
+    notFound = 'not-found',
+    skills = 'skills'
 }
 
 export type terminalSliceItem = {

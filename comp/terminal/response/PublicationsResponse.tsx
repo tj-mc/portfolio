@@ -1,4 +1,4 @@
-import React, {FunctionComponent as FC, useEffect, useRef, useState} from "react";
+import React, {FC, useEffect, useRef, useState} from "react";
 import {Animated, Text, View} from 'react-native';
 import {theme} from "../../../const/theme";
 import {mediumFeed} from "../../../const/mediumFeed";
@@ -29,18 +29,15 @@ export const PublicationsResponse: FC<{}> = () => {
             .then(r => r.json())
             .then(r => {
                 if (Array.isArray(r?.items) && r?.status === 'ok') {
-                    setItems(r.items)
+                    const filtered = r.items.filter((item: any) => item.categories.length !== 0)
+                    setItems(filtered)
                 }
             })
     }, [])
 
-    useEffect(() => {
-    }, [items])
-
     return (
         <Animated.View
             style={{
-                margin: 10,
                 opacity: fadeAnim
             }}
         >
@@ -54,7 +51,8 @@ export const PublicationsResponse: FC<{}> = () => {
     )
 }
 
-const Intro: FC<{}> = props => {
+
+const Intro: FC = () => {
     return (
         <View>
             <Text
@@ -71,7 +69,7 @@ const Intro: FC<{}> = props => {
 }
 
 
-const ReadMore: FC<{}> = props => {
+const ReadMore: FC = props => {
     return (
         <View
             style={{
@@ -102,7 +100,6 @@ const ReadMore: FC<{}> = props => {
 
 
 const Article: FC<{ item: any }> = ({item}) => {
-
 
     const duration = 100
 

@@ -1,6 +1,6 @@
 import React, {FunctionComponent as FC, useEffect} from "react";
-import {Text, View} from 'react-native';
-import {theme} from "../../../const/theme";
+import {View} from 'react-native';
+import {HeaderTwo} from "../../text/header/HeaderTwo";
 
 export const PortfolioResponse: FC<{}> = () => {
 
@@ -9,14 +9,7 @@ export const PortfolioResponse: FC<{}> = () => {
 
     return (
         <View>
-            <Text
-                style={{
-                    fontFamily: theme.font.primary.regular,
-                    color: theme.color.white
-                }}
-            >
-                Portfolio
-            </Text>
+            <HeaderTwo text={'Portfolio'}/>
         </View>
     )
 }

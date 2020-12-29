@@ -6,6 +6,7 @@ import {ResumeResponse} from "../../comp/terminal/response/ResumeReponse";
 import {PortfolioResponse} from "../../comp/terminal/response/PortfolioResponse";
 import {PublicationsResponse} from "../../comp/terminal/response/PublicationsResponse";
 import {OpenSourceResponse} from "../../comp/terminal/response/OpenSourceResponse";
+import {SkillsResponse} from "../../comp/terminal/response/SkillsResponse";
 
 export const getResponseComponent = (prompt: string, response: terminalResponse): ReactComponentElement<any> => {
 
@@ -43,6 +44,13 @@ export const getResponseComponent = (prompt: string, response: terminalResponse)
             return (
                 <ResponseContainer prompt={prompt}>
                     <NotFoundResponse/>
+                </ResponseContainer>
+            )
+
+        case terminalResponse.skills:
+            return (
+                <ResponseContainer prompt={prompt}>
+                    <SkillsResponse/>
                 </ResponseContainer>
             )
         default:
