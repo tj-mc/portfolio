@@ -12,6 +12,7 @@ web-build/
 # macOS
 .DS_Store
 
+.idea
 .idea/workspace.xml
 .idea/shelf
 
