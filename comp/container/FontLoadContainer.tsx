@@ -1,23 +1,26 @@
-import React, {FunctionComponent} from "react";
-
+import React, {FunctionComponent, useEffect} from "react";
 import {FiraCode_300Light, FiraCode_400Regular, FiraCode_700Bold, useFonts} from "@expo-google-fonts/fira-code";
-import {View} from "react-native";
-import {theme} from "../../const/theme";
+import {useDispatch} from "react-redux";
+import {fontLoadSlice} from "../../store/fontLoadSlice";
 
 export const FontLoadContainer: FunctionComponent = ({children}) => {
+
+    const dispatch = useDispatch()
 
     let [loaded] = useFonts({
         FiraCode_300Light,
         FiraCode_400Regular,
         FiraCode_700Bold
-    });
+    })
 
-    return loaded ? <>{children}</> : <BackDrop/>
+    useEffect(() => {
+        if (loaded) {
+            dispatch(
+                fontLoadSlice.actions.ready()
+            )
+        }
+    }, [loaded])
 
-}
+    return <>{children}</>
 
-const BackDrop: FunctionComponent = () => {
-    return (
-        <View style={{flex: 1, backgroundColor: theme.color.backdrop}}/>
-    )
 }
