@@ -1,10 +1,11 @@
 import React, {FunctionComponent, useEffect, useState} from "react";
 import {Helmet} from 'react-helmet';
 import {useSelector} from "react-redux";
+import {RootState} from "../../store";
 
 export const HelmetContainer: FunctionComponent = ({children}) => {
 
-    const fontLoad = useSelector(state => state.fontLoad)
+    const fontLoad = useSelector((state: RootState) => state.fontLoad)
 
     return (
         <>

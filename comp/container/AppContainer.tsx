@@ -3,6 +3,7 @@ import {Animated, Easing, Text, View} from 'react-native'
 import {theme} from "../../const/theme";
 import {ViewSource} from "../ViewSource";
 import {useSelector} from "react-redux";
+import {RootState} from "../../store";
 
 export const AppContainer: FunctionComponent = ({children}) => {
     return (
@@ -26,7 +27,7 @@ export const AppContainer: FunctionComponent = ({children}) => {
 
 const RocketAnimation: FunctionComponent<{}> = props => {
 
-    const rocketState = useSelector(state => state.rocket)
+    const rocketState = useSelector((state: RootState) => state.rocket)
     const [visible, setVisible] = useState(false)
 
     const progress = useRef(new Animated.Value(0)).current;
