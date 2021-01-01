@@ -38,8 +38,8 @@ export const Link: FunctionComponent<{ onPress: () => void, useUnderline?: boole
 const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
 
     const opacity = useRef(new Animated.Value(0)).current
-    const duration = 80
-    const outDuration = 250
+    const duration = 20
+    const outDuration = 100
 
     const open = () => {
         Animated.timing(opacity, {

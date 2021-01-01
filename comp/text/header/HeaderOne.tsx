@@ -2,6 +2,8 @@ import React, {FunctionComponent, useEffect, useRef, useState} from 'react'
 
 import {Animated} from 'react-native'
 import {theme} from "../../../const/theme";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../store";
 
 type HeaderOneProps = {
     text: string
@@ -13,6 +15,8 @@ export const HeaderOne: FunctionComponent<HeaderOneProps> = ({text}) => {
     const y = useRef(new Animated.Value(0)).current;
     const [isFlashing, setIsFlashing] = useState(false)
     const [hovered, setHovered] = useState(false)
+
+    const fontLoad = useSelector((state: RootState) => state.fontLoad)
 
     const randInt = (min: number, max: number): number => Math.random() * (max - min) + min;
 
@@ -50,6 +54,8 @@ export const HeaderOne: FunctionComponent<HeaderOneProps> = ({text}) => {
     }
 
     const chain = () => {
+        if (!fontLoad.ready) return
+
         let count = 0;
         while (count < 20) {
             count++;
@@ -73,7 +79,7 @@ export const HeaderOne: FunctionComponent<HeaderOneProps> = ({text}) => {
         setTimeout(() => {
             chain()
         }, 200)
-    }, [])
+    }, [fontLoad.ready])
 
 
     return (

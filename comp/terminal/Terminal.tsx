@@ -128,7 +128,7 @@ const MainContainer: FC = ({children}) => {
     useEffect(() => {
         setTimeout(() => {
             anim()
-        }, 1500)
+        }, 1200)
     }, [])
 
     return (

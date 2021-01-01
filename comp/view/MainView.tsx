@@ -8,6 +8,8 @@ import {QuickCommand} from "../pressable/QuickCommand";
 import {Terminal} from "../terminal/Terminal";
 import {ContactBlock} from "../contact/ContactBlock";
 import {terminalResponse} from "../../store/terminalSlice";
+import {useSelector} from "react-redux";
+import {RootState} from "../../store";
 
 export const MainView: FunctionComponent = () => {
     return (

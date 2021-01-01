@@ -39,7 +39,6 @@ export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text, respon
                 >
                     {'>'} {text}
                 </Text>
-
             </Link>
         </View>
     )
