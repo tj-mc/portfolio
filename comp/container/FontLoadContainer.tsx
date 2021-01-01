@@ -8,7 +8,6 @@ export const FontLoadContainer: FunctionComponent = ({children}) => {
     const dispatch = useDispatch()
 
     let [loaded] = useFonts({
-        FiraCode_300Light,
         FiraCode_400Regular,
         FiraCode_700Bold
     })

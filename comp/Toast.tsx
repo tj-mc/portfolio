@@ -2,7 +2,6 @@ import React, {FunctionComponent as FC} from "react";
 import {Text, View} from 'react-native';
 import {theme} from "../const/theme";
 import {Directions} from "../const/directions";
-import {Octicons} from '@expo/vector-icons';
 
 export const Toast: FC<{ text: string, arrow: Directions }> = props => {
     return (
@@ -68,7 +67,7 @@ const TopMode: FC = () => {
                 top: '-10%',
             }}
         >
-            <Octicons name="triangle-up" size={16} color={theme.color.secondary}/>
+            <Arrow/>
         </View>
     )
 }
@@ -84,7 +83,23 @@ const LeftMode: FC = () => {
                 left: '-1%',
             }}
         >
-            <Octicons name="triangle-left" size={16} color={theme.color.secondary}/>
+            <Arrow/>
         </View>
+    )
+}
+
+const Arrow: FC = () => {
+    return (
+        <View
+            style={{
+                width: 10,
+                height: 10,
+                backgroundColor: theme.color.secondary,
+                transform: [
+                    { translateX: 2 },
+                    { rotate: '45deg' },
+                ]
+            }}
+        />
     )
 }

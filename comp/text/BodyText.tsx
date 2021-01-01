@@ -13,7 +13,7 @@ export const BodyText: FunctionComponent<BodyTextProps> = ({text, textAlign = 'l
         <View>
             <Text
                 style={{
-                    fontFamily: theme.font.primary.light,
+                    fontFamily: theme.font.primary.regular,
                     fontSize: 14,
                     color: theme.color.white,
                     textAlign: textAlign,

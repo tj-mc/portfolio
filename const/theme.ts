@@ -1,7 +1,6 @@
 export const theme = {
     font: {
         primary: {
-            light: 'FiraCode_300Light',
             regular: 'FiraCode_400Regular',
             bold: 'FiraCode_700Bold'
         }

@@ -12,7 +12,7 @@ export const HeaderThree: FunctionComponent<HeaderThreeProps> = ({text}) => {
         <View>
             <Text
                 style={{
-                    fontFamily: theme.font.primary.light,
+                    fontFamily: theme.font.primary.regular,
                     fontSize: 16,
                     color: theme.color.white
                 }}
