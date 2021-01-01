@@ -18,7 +18,7 @@ const alwaysStyle = `
 const readyStyle = `
 #test_id {
     opacity: 0;
-    transition: all 0.15s ease;
+    transition: all 0.4s ease;
     pointer-events: none;
 }
 `
@@ -61,7 +61,6 @@ export const HelmetContainer: FunctionComponent = ({children}) => {
                         <style>{readyStyle}</style>
                         :
                         <style>{loadingStyle}</style>
-
                 }
 
             </Helmet>

@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useEffect} from "react";
-import {FiraCode_300Light, FiraCode_400Regular, FiraCode_700Bold, useFonts} from "@expo-google-fonts/fira-code";
+import {FiraCode_400Regular, FiraCode_700Bold, useFonts} from "@expo-google-fonts/fira-code";
 import {useDispatch} from "react-redux";
 import {fontLoadSlice} from "../../store/fontLoadSlice";
 
