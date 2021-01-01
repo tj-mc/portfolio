@@ -6,10 +6,11 @@ import {useSelector} from "react-redux";
 import {RootState} from "../../../store";
 
 type HeaderOneProps = {
-    text: string
+    text: string,
+    disableAnimation?: boolean
 }
 
-export const HeaderOne: FunctionComponent<HeaderOneProps> = ({text}) => {
+export const HeaderOne: FunctionComponent<HeaderOneProps> = ({text, disableAnimation}) => {
 
     const x = useRef(new Animated.Value(0)).current;
     const y = useRef(new Animated.Value(0)).current;
@@ -21,6 +22,8 @@ export const HeaderOne: FunctionComponent<HeaderOneProps> = ({text}) => {
     const randInt = (min: number, max: number): number => Math.random() * (max - min) + min;
 
     const animate = () => {
+
+        if (disableAnimation) return
 
         setIsFlashing(true)
 

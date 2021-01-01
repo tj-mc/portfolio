@@ -8,10 +8,11 @@ import {terminalResponse, terminalSlice} from "../../store/terminalSlice";
 
 type QuickCommandProps = {
     text: string,
-    response: terminalResponse
+    response?: terminalResponse,
+    onPress?: () => void
 }
 
-export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text, response}) => {
+export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text, response, onPress}) => {
 
     const dispatch = useDispatch()
 
@@ -23,12 +24,16 @@ export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text, respon
             }}
         >
             <Link onPress={() => {
-                dispatch(
-                    terminalSlice.actions.add({
-                        prompt: text,
-                        response
-                    })
-                )
+                if (onPress) {
+                    onPress()
+                } else {
+                    dispatch(
+                        terminalSlice.actions.add({
+                            prompt: text,
+                            response
+                        })
+                    )
+                }
             }}>
                 <Text
                     style={{

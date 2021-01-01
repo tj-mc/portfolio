@@ -17,6 +17,7 @@ export type terminalSliceItem = {
 export const terminalSlice = createSlice({
     name: 'terminal',
     initialState: [] as Array<terminalSliceItem>,
+    // initialState: [{prompt: 'Test', response: terminalResponse.skills}] as Array<terminalSliceItem>,
     reducers: {
         add(state, action: PayloadAction<terminalSliceItem>) {
             state.push(

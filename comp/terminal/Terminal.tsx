@@ -128,7 +128,7 @@ const MainContainer: FC = ({children}) => {
     useEffect(() => {
         setTimeout(() => {
             anim()
-        }, 1200)
+        }, 500)
     }, [])
 
     return (
@@ -138,12 +138,8 @@ const MainContainer: FC = ({children}) => {
                 borderColor: theme.color.secondary,
                 borderWidth: 2,
                 transform: [
-                    {
-                        scaleX: x
-                    },
-                    {
-                        scaleY: y
-                    }
+                    { scaleX: x },
+                    { scaleY: y }
                 ]
             }}
         >
