@@ -22,7 +22,7 @@ export const SkillTool: FC<{
                 resizeMode={'contain'}
                 style={{
                     width: '80%',
-                    height: '100%'
+                    height: '100%',
                 }}
             />
             <Text
@@ -33,7 +33,8 @@ export const SkillTool: FC<{
                     textAlign: 'center',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    fontSize: 14
+                    fontSize: 14,
+
                 }}
             >
                 {props.text}

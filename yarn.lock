@@ -13907,7 +13907,7 @@ prompts@2.4.0, prompts@^2.3.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -14311,6 +14311,16 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-fade-in-view@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-fade-in-view/-/react-native-fade-in-view-1.1.0.tgz#9d7e39d09cbbd715c2e180151aa388d126d41cce"
+  integrity sha512-1KOyRRgDdgN3X14bDjxXmZ4/La4DVZVBbr/aOpvzxDEDsQrq8uSCM+2hBcqC5mPGqTOcwKqVRtbzxRq145xxzA==
+
+react-native-fade@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-fade/-/react-native-fade-2.0.2.tgz#86426c0f469958af37d28e813edde79cb49b3011"
+  integrity sha512-2QxtVw+Ii2G5fUdi8BIT97tfg5MbevSKZWh4WnemMjMmZMC3sW48oG/7SxmrX18ViQag6pjRf/J/za3q0NobLg==
+
 react-native-safe-area-context@3.1.9:
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.1.9.tgz#48864ea976b0fa57142a2cc523e1fd3314e7247e"
@@ -14323,6 +14333,13 @@ react-native-svg@12.1.0:
   dependencies:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
+
+react-native-typewriter@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-typewriter/-/react-native-typewriter-0.7.0.tgz#b370794f45366a9e9a47bdd40666198ebdce3bf2"
+  integrity sha512-lwlo8TemtZHgYH/EctYaCT5xMkgIk9ZQVyFm7qaY5b3MxveOd1v5g58oHNAkC9+vRJfdef+3dZoTJ9bM/+75/w==
+  dependencies:
+    prop-types "^15.5.7"
 
 react-native-web@~0.13.12:
   version "0.13.18"

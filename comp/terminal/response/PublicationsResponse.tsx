@@ -6,6 +6,7 @@ import {Link} from "../../pressable/Link";
 import {mediumPage} from "../../../const/mediumPage";
 import {HeaderTwo} from "../../text/header/HeaderTwo";
 
+
 export const PublicationsResponse: FC<{}> = () => {
 
     const [items, setItems] = useState([])
@@ -41,7 +42,10 @@ export const PublicationsResponse: FC<{}> = () => {
                 opacity: fadeAnim
             }}
         >
-            <HeaderTwo text={'Blog'}/>
+            <HeaderTwo
+                text={'Blog'}
+                animate
+            />
             <Intro/>
             {
                 items.map((item: any) => <Article {...{item}} key={item.guid}/>)
@@ -69,7 +73,7 @@ const Intro: FC = () => {
 }
 
 
-const ReadMore: FC = props => {
+const ReadMore: FC = () => {
     return (
         <View
             style={{

@@ -7,12 +7,16 @@ import {View} from 'react-native';
  */
 export const ResponseContainer: FC<{ prompt: string }> = props => {
     return (
-        <>
+        <View
+            style={{
+                marginTop: 10
+            }}
+        >
             {/*<PromptLine frozenValue={props.prompt}/>*/}
             <>
                 {props.children}
             </>
             <View style={{height: 20}}/>
-        </>
+        </View>
     )
 }

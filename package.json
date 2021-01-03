@@ -25,7 +25,9 @@
     "react-dom": "16.13.1",
     "react-helmet": "^6.1.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-fade-in-view": "^1.1.0",
     "react-native-svg": "12.1.0",
+    "react-native-typewriter": "^0.7.0",
     "react-native-web": "~0.13.12",
     "react-redux": "^7.2.2"
   },

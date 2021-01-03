@@ -1,13 +1,16 @@
 import React, {FunctionComponent} from 'react'
 
+//@ts-ignore
+import TypeWriter from 'react-native-typewriter'
 import {Text, View} from 'react-native'
 import {theme} from "../../../const/theme";
 
 type HeaderTwoProps = {
-    text: string
+    text: string,
+    animate?: boolean
 }
 
-export const HeaderTwo: FunctionComponent<HeaderTwoProps> = ({text}) => {
+export const HeaderTwo: FunctionComponent<HeaderTwoProps> = ({text, animate}) => {
     return (
         <View>
             <Text
@@ -17,7 +20,18 @@ export const HeaderTwo: FunctionComponent<HeaderTwoProps> = ({text}) => {
                     color: theme.color.white
                 }}
             >
-                {text}
+                {
+                    animate
+                        ?
+                        <TypeWriter
+                            typing={1}
+                            fixed={true}
+                        >
+                            {text}
+                        </TypeWriter>
+                        :
+                        text
+                }
             </Text>
         </View>
     )

@@ -1,15 +1,22 @@
-import React, {FunctionComponent as FC, useEffect} from "react";
+import React, {FunctionComponent as FC} from "react";
 import {View} from 'react-native';
 import {HeaderTwo} from "../../text/header/HeaderTwo";
 
 export const PortfolioResponse: FC<{}> = () => {
 
-    useEffect(() => {
-    }, [])
-
     return (
         <View>
-            <HeaderTwo text={'Portfolio'}/>
+            <HeaderTwo
+                text={'Portfolio'}
+                animate
+            />
+            {/*<Fade>*/}
+            {/*    <Card>*/}
+            {/*        <Text>*/}
+            {/*            Hey!*/}
+            {/*        </Text>*/}
+            {/*    </Card>*/}
+            {/*</Fade>*/}
         </View>
     )
 }

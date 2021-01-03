@@ -36,8 +36,9 @@ export const ViewSource: FC<{}> = () => {
             {
                 visible &&
                 <View
+                    //@ts-ignore
                     style={{
-                        position: 'absolute',
+                        position: 'fixed',
                         left: 20,
                         bottom: 10,
                         display: 'flex',

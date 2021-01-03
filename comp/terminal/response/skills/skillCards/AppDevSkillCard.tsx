@@ -1,13 +1,12 @@
 import React, {FC} from "react";
-import {View} from 'react-native';
-import {SkillCard} from "./SkillCard";
-import reactIcon from "../../../../assets/img/skillIcon/react.png";
-import swiftIcon from "../../../../assets/img/skillIcon/swift.png";
-import tsIcon from "../../../../assets/img/skillIcon/ts.png";
-import {Paragraph} from "../../../text/Paragraph";
-import {SkillTool} from "./SkillTool";
+import {SkillCard} from "../SkillCard";
+import reactIcon from "../../../../../assets/img/skillIcon/react.png";
+import swiftIcon from "../../../../../assets/img/skillIcon/swift.png";
+import tsIcon from "../../../../../assets/img/skillIcon/ts.png";
+import {Paragraph} from "../../../../text/Paragraph";
+import {SkillTool} from "../SkillTool";
 
-export const AppDevSkillCard: FC = props => {
+export const AppDevSkillCard: FC = () => {
     return (
         <SkillCard
             title={'App Development'}

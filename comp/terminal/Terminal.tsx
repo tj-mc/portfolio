@@ -55,12 +55,12 @@ const Tab: FC = () => {
                     fontFamily: theme.font.primary.bold,
                     fontSize: 12,
                     color: theme.color.gray.medium,
-                    marginLeft: 10,
+                    marginLeft: 5,
                     marginRight: 10,
                     borderRightWidth: 1.5,
                     borderColor: theme.color.secondary,
-                    marginBottom: -1,
-                    paddingRight: 10
+                    paddingRight: 10,
+                    padding: 5
                 }}
             >
                 localhost
