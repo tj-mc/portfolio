@@ -3,11 +3,11 @@ import {View, Text, Image} from 'react-native';
 import {HeaderTwo} from "../../text/header/HeaderTwo";
 
 // @ts-ignore
-import reactIcon from '../../../assets/img/react.png'
+import reactIcon from '../../../assets/img/skillIcon/react.png'
 // @ts-ignore
-import swiftIcon from '../../../assets/img/swift.png'
+import swiftIcon from '../../../assets/img/skillIcon/swift.png'
 // @ts-ignore
-import tsIcon from '../../../assets/img/ts.png'
+import tsIcon from '../../../assets/img/skillIcon/ts.png'
 
 import {AppDevSkillCard} from "./skills/AppDevSkillCard";
 import {WebsiteSkillCard} from "./skills/WebsitesSkillCard";

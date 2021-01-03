@@ -2,11 +2,11 @@ import React, {FC} from "react";
 import {View} from 'react-native';
 import {SkillCard} from "./SkillCard";
 // @ts-ignore
-import reactIcon from "../../../../assets/img/react.png";
+import reactIcon from "../../../../assets/img/skillIcon/react.png";
 // @ts-ignore
-import swiftIcon from "../../../../assets/img/swift.png";
+import swiftIcon from "../../../../assets/img/skillIcon/swift.png";
 // @ts-ignore
-import tsIcon from "../../../../assets/img/ts.png";
+import tsIcon from "../../../../assets/img/skillIcon/ts.png";
 import {Paragraph} from "../../../text/Paragraph";
 import {SkillTool} from "./SkillTool";
 
