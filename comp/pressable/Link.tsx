@@ -2,11 +2,14 @@ import React, {FunctionComponent, useEffect, useRef, useState} from "react";
 import {Animated, Easing, TouchableOpacity} from "react-native";
 import {theme} from "../../const/theme";
 
-export const Link: FunctionComponent<{ onPress: () => void, useUnderline?: boolean }> = ({
-                                                                                             onPress,
-                                                                                             children,
-                                                                                             useUnderline = true
-                                                                                         }) => {
+export const Link: FunctionComponent<{
+    onPress: () => void,
+    useUnderline?: boolean
+}> = ({
+          onPress,
+          children,
+          useUnderline = true,
+      }) => {
 
     const [hovered, setHovered] = useState(false)
 
@@ -18,6 +21,7 @@ export const Link: FunctionComponent<{ onPress: () => void, useUnderline?: boole
                 right: 10,
                 left: 10
             }}
+            accessibilityRole={'link'}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onPress={() => {
@@ -68,7 +72,7 @@ const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
 
     return (
         <Animated.View
-            style={{
+            style={[{
                 zIndex: -1,
                 opacity: opacity,
                 position: 'absolute',
@@ -77,7 +81,7 @@ const Underline: FunctionComponent<{ show: boolean }> = ({show}) => {
                 left: 0,
                 right: 0,
                 backgroundColor: theme.color.secondary
-            }}
+            }]}
         />
     )
 }

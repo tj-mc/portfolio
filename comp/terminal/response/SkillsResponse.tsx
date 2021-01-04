@@ -2,6 +2,7 @@ import React, {FC} from "react";
 import {View} from 'react-native';
 import {HeaderTwo} from "../../text/header/HeaderTwo";
 import {AppDevSkillCard} from "./skills/skillCards/AppDevSkillCard";
+import {WebsitesSkillCard} from "./skills/skillCards/WebsiteSkillCard";
 
 
 export const SkillsResponse: FC = () => {
@@ -13,7 +14,7 @@ export const SkillsResponse: FC = () => {
             />
             <View>
                 <AppDevSkillCard/>
-                {/*<WebsitesSkillCard/>*/}
+                <WebsitesSkillCard/>
                 {/*<ServerAndDatabaseSkillCard/>*/}
                 {/*<DesignSkillCard/>*/}
             </View>

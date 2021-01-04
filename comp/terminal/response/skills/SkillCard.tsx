@@ -5,6 +5,7 @@ import {Card} from "../../../Card";
 import {theme} from "../../../../const/theme";
 import {QuickCommand} from "../../../pressable/QuickCommand";
 import {Fade} from "../../../animated/Fade";
+import {openURL} from "../../../../func/linking";
 
 export const SkillCard: FC<{
     title: string,
@@ -20,7 +21,7 @@ export const SkillCard: FC<{
                 >
                     <View
                         style={{
-                            marginBottom: 10
+                            marginBottom: 20
                         }}
                     >
                         <HeaderOne
@@ -29,17 +30,16 @@ export const SkillCard: FC<{
                         />
                     </View>
                     {props.children}
-
-
                     <Text
                         style={{
                             fontFamily: theme.font.primary.bold,
                             color: theme.color.white,
-                            fontSize: 14,
-                            marginBottom: 20
+                            fontSize: 18,
+                            marginBottom: 20,
+                            textAlign: 'center'
                         }}
                     >
-                        Tools
+                        Strengths
                     </Text>
                     <View
                         style={{
@@ -51,9 +51,10 @@ export const SkillCard: FC<{
                         }}
                     >
                         {
-                            props.tools.map(tool => {
+                            props.tools.map((tool, idx) => {
                                 return (
                                     <View
+                                        key={idx}
                                         style={{
                                             marginBottom: 15
                                         }}
@@ -77,7 +78,7 @@ export const SkillCard: FC<{
                         <QuickCommand
                             text={'get-in-touch'}
                             onPress={() => {
-                                open('tel:0419 710 903')
+                                openURL('tel:0419 710 903')
                             }}
                         />
                     </View>

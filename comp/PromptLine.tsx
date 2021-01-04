@@ -18,7 +18,7 @@ export const PromptLine: FC<{ frozenValue?: string }> = props => {
                 }}
             >
                 <Text style={{color: theme.color.primary}}>
-                    tom@tjmc.dev
+                    guest@tjmc.dev
                 </Text>
                 <Text style={{color: theme.color.white}}>
                     :

@@ -52,6 +52,12 @@ const RocketAnimation: FunctionComponent<{}> = props => {
         setVisible(rocketState.left > 0 && rocketState.top > 0)
     }, [rocketState])
 
+    const opacity = progress.interpolate({
+        inputRange: [0, 1],
+        outputRange: [1, 0],
+        easing: Easing.inOut(Easing.exp)
+    })
+
     const scale = progress.interpolate({
         inputRange: [0, 1],
         outputRange: [1, 3],
@@ -80,7 +86,7 @@ const RocketAnimation: FunctionComponent<{}> = props => {
         <Animated.View
             // @ts-ignore - RNW
             style={{
-                opacity: visible ? 1 : 0,
+                opacity: visible ? opacity : 0,
                 position: 'fixed',
                 top: rocketState.top - 10,
                 left: rocketState.left,
@@ -102,7 +108,7 @@ const RocketAnimation: FunctionComponent<{}> = props => {
         >
             <Text
                 style={{
-                    fontSize: 24
+                    fontSize: 28
                 }}
             >
                 🚀

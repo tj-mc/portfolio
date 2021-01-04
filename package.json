@@ -14,7 +14,6 @@
     "@expo/vector-icons": "^12.0.0",
     "@reduxjs/toolkit": "^1.5.0",
     "expo": "~40.0.0",
-    "expo-blur": "~8.2.2",
     "expo-cli": "^4.0.15",
     "expo-font": "~8.4.0",
     "gatsby": "^2.29.1",

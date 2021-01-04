@@ -4,7 +4,7 @@ import {theme} from "../../const/theme";
 
 export const Paragraph: FC<{}> = props => {
 
-    const fontSize = 13
+    const fontSize = 14
 
     return (
         <Text

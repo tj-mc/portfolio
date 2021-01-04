@@ -6,6 +6,7 @@ export const Card: FC = props => {
     return (
         <View
             style={{
+                borderRadius: 0,
                 backgroundColor: theme.color.gray.card,
                 shadowColor: "#000",
                 shadowOffset: {

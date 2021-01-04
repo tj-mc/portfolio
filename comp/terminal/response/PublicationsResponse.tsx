@@ -7,11 +7,12 @@ import {mediumPage} from "../../../const/mediumPage";
 import {HeaderTwo} from "../../text/header/HeaderTwo";
 
 
-export const PublicationsResponse: FC<{}> = () => {
+export const PublicationsResponse: FC = () => {
 
     const [items, setItems] = useState([])
     const fadeAnim = useRef(new Animated.Value(0)).current
 
+    // Fade in when articles load
     useEffect(() => {
         if (items.length > 0) {
             Animated.timing(
@@ -25,6 +26,7 @@ export const PublicationsResponse: FC<{}> = () => {
         }
     }, [items])
 
+    // Get articles
     useEffect(() => {
         fetch(mediumFeed)
             .then(r => r.json())
@@ -105,6 +107,7 @@ const ReadMore: FC = () => {
 
 const Article: FC<{ item: any }> = ({item}) => {
 
+    // Length of hover animations
     const duration = 100
 
     const minColor = 0
@@ -115,6 +118,7 @@ const Article: FC<{ item: any }> = ({item}) => {
 
     const colorAnim = useRef(new Animated.Value(minColor)).current
 
+    // Grab the first paragraph of the article to use as a preview
     useEffect(() => {
         const split = item?.content?.split('<p>')?.[1]?.split('</p>')?.[0]
         if (split) {
@@ -122,6 +126,7 @@ const Article: FC<{ item: any }> = ({item}) => {
         }
     }, [item])
 
+    // Manually format the date (Safari does not accept this format)
     useEffect(() => {
         const date = item.pubDate.split(' ')[0].split('-')
         setFormattedDate(
@@ -181,7 +186,7 @@ const Article: FC<{ item: any }> = ({item}) => {
                         <View
                             style={{
                                 margin: 5,
-                                padding: 10,
+                                padding: 15,
                                 backgroundColor: theme.color.gray.card
                             }}
                         >
@@ -195,7 +200,7 @@ const Article: FC<{ item: any }> = ({item}) => {
                                         fontFamily: theme.font.primary.bold,
                                         fontSize: 16,
                                         color: theme.color.white,
-                                        marginBottom: 5
+                                        marginBottom: 10
                                     }}
                                 >
                                     {item.title}
@@ -208,7 +213,7 @@ const Article: FC<{ item: any }> = ({item}) => {
                                         color: theme.color.white
                                     }}
                                 >
-                                    {`   ${preview}`}
+                                    {preview}
                                 </Text>
                             </View>
 
