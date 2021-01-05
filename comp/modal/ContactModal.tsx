@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import {Modal} from "./Modal";
-import {TextInput, View} from "react-native";
+import {Text, TextInput, View} from "react-native";
 import {HeaderTwo} from "../text/header/HeaderTwo";
 import {Paragraph} from "../text/Paragraph";
 import {theme} from "../../const/theme";
@@ -14,6 +14,7 @@ export const ContactModal: FC = () => {
     const modalState = useSelector((state: RootState) => state.modal)
 
     const [email, setEmail] = useState('')
+    const [body, setBody] = useState('')
     const dispatch = useDispatch()
 
     return (
@@ -40,9 +41,10 @@ export const ContactModal: FC = () => {
                 </Paragraph>
 
                 <Paragraph>
-                    Enter your email below and I'll get back to you within 24 hours.
+                    Enter your email below and I'll get back to you before the end of the day.
                 </Paragraph>
 
+                <InputLabel text={'Email'}/>
                 <TextInput
                     value={email}
                     onChangeText={text => setEmail(text)}
@@ -50,11 +52,31 @@ export const ContactModal: FC = () => {
                         fontFamily: theme.font.primary.regular,
                         color: theme.color.white,
                         padding: 10,
-                        marginVertical: 10
+                        marginBottom: 10,
+                        borderColor: theme.color.secondary,
+                        borderWidth: 2
                     }}
                     textContentType={'emailAddress'}
                     returnKeyLabel={'Submit'}
-                    placeholder={'Type here...'}
+                    placeholder={'Enter your email'}
+                />
+
+                <InputLabel text={'Enquiry'}/>
+                <TextInput
+                    value={body}
+                    onChangeText={text => setBody(text)}
+                    multiline={true}
+                    style={{
+                        minHeight: 200,
+                        fontFamily: theme.font.primary.regular,
+                        color: theme.color.white,
+                        padding: 10,
+                        marginBottom: 10,
+                        borderColor: theme.color.secondary,
+                        borderWidth: 2,
+                    }}
+                    returnKeyLabel={'Submit'}
+                    placeholder={'Tell me about your project.'}
                 />
 
                 <View
@@ -68,14 +90,19 @@ export const ContactModal: FC = () => {
                     <QuickCommand
                         text={'submit'}
                         onPress={() => {
-                            // let formData = new FormData()
-                            // formData.append('email', 'test@test.com')
-                            // fetch('/', {
-                            //     method: 'POST',
-                            //     headers: {"Content-Type": "application/x-www-form-urlencoded"},
-                            //     body: new URLSearchParams(formData).toString()
-                            // }).then(() => console.log('Form successfully submitted')).catch((error) =>
-                            //     alert(error))
+                            fetch(`.netlify/functions/contactSubmit`, {
+                                method: 'POST',
+                                body: JSON.stringify({email: email, enquiry: body})
+                            }).then(() => {
+                                setBody('')
+                                setEmail('')
+                                dispatch(
+                                    modalSlice.actions.setContactVisible(false)
+                                )
+                            }).catch(e => {
+
+                            })
+
                         }}
                     />
                 </View>
@@ -84,5 +111,20 @@ export const ContactModal: FC = () => {
             </View>
         </Modal>
 
+    )
+}
+
+const InputLabel: FC<{ text: string }> = props => {
+    return (
+        <Text
+            style={{
+                fontFamily: theme.font.primary.regular,
+                color: theme.color.white,
+                marginBottom: 2,
+                letterSpacing: 4
+            }}
+        >
+            {props.text}
+        </Text>
     )
 }

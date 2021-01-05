@@ -1,32 +1,41 @@
 exports.handler = async function (event, context) {
 
+    const data = JSON.parse(event.body)
+
     const sgMail = require('@sendgrid/mail');
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sgMail.setApiKey(process.env.SENDGRID_KEY);
+
+    const toAddress = 'tom_mcintosh@outlook.com'
+
+    const emailBody = `<html>
+    <strong>Email:</strong> ${data.email}
+    <strong>Enquiry:</strong>
+    <p>${data.enquiry}</p>
+    </html>
+    `
+
     const msg = {
-        to: 'tom_mcintosh@outlook.com',
-        from: 'tom_mcintosh@outlook.com', // Use the email address or domain you verified above
-        subject: 'Sending with Twilio SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        to: toAddress,
+        from: 'tjmc.dev.website@gmail.com', // Use the email address or domain you verified above
+        subject: 'New Contact form submission',
+        html: emailBody,
     };
 
-    sgMail
+    return sgMail
         .send(msg)
         .then(() => {
 
             return {
                 statusCode: 200,
-                body: JSON.stringify({message: "Hello World"})
+                body: `Sent to ${toAddress}`
             };
-
 
         }, error => {
-            console.error(error);
-
-            return {
-                statusCode: 500,
-                body: error.response.body
-            };
+            if (error.response) {
+                return {
+                    statusCode: 500,
+                    body: error.response.body
+                };
+            }
         });
-
 }
