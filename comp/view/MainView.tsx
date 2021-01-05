@@ -8,8 +8,6 @@ import {QuickCommand} from "../pressable/QuickCommand";
 import {Terminal} from "../terminal/Terminal";
 import {ContactBlock} from "../contact/ContactBlock";
 import {terminalResponse} from "../../store/terminalSlice";
-import {useSelector} from "react-redux";
-import {RootState} from "../../store";
 
 export const MainView: FunctionComponent = () => {
     return (
@@ -113,7 +111,7 @@ const Title: FunctionComponent = () => {
         >
             <HeaderOne text={'Tom McIntosh'}/>
             <View style={{height: 5}}/>
-            <HeaderThree text={'Software Developer & Creator'}/>
+            <HeaderThree text={'Australian Developer & Creator'}/>
         </View>
     )
 }

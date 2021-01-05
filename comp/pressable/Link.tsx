@@ -5,10 +5,13 @@ import {theme} from "../../const/theme";
 export const Link: FunctionComponent<{
     onPress: () => void,
     useUnderline?: boolean
+    a11yLabel: string,
+    isExternalLink: boolean
 }> = ({
           onPress,
           children,
           useUnderline = true,
+          a11yLabel,
       }) => {
 
     const [hovered, setHovered] = useState(false)
@@ -21,7 +24,9 @@ export const Link: FunctionComponent<{
                 right: 10,
                 left: 10
             }}
-            accessibilityRole={'link'}
+            accessibilityLabel={a11yLabel}
+            tabindex={'0'}
+            accessibilityRole={'button'}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onPress={() => {

@@ -10,6 +10,7 @@ export const theme = {
         secondary: '#FFD1E2',
         backdrop: '#292929',
         white: '#FFFFFF',
+        modalBackdrop: `rgba(0, 0, 0, 0.8)`,
         gray: {
             card: '#454545',
             medium: '#ACACAC'

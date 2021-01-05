@@ -38,7 +38,7 @@ export const AppDevSkillCard: FC = () => {
 
             <Paragraph>
                 I build refined mobile apps that feel right at home on iOS and Android, meaning you don’t have
-                to pick a platform. By utilising industry standard technology used by Facebook, AirBnB and Uber,
+                to pick a platform. By utilising cutting edge technology used by Facebook, AirBnB and Uber,
                 your app will be finished in half the time, with half the bugs and at half the cost of
                 traditional development.
             </Paragraph>

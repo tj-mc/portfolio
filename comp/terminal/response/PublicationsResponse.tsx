@@ -87,6 +87,8 @@ const ReadMore: FC = () => {
             }}
         >
             <Link
+                isExternalLink={true}
+                a11yLabel={'Open Tom McIntosh on Medium.com'}
                 onPress={() => {
                     open(mediumPage)
                 }}
@@ -158,6 +160,8 @@ const Article: FC<{ item: any }> = ({item}) => {
 
     return (
         <Link
+            isExternalLink={true}
+            a11yLabel={`Open article: '${item.title}'`}
             useUnderline={false}
             onPress={() => {
                 open(item.link)

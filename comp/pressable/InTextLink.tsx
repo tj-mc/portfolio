@@ -5,11 +5,15 @@ import {theme} from "../../const/theme";
 
 export const InTextLink: FunctionComponent<{
     onPress: () => void,
+    a11yLabel: string,
+    isExternal: boolean
 }> = props => {
     return (
         <Text>
             &nbsp;
             <Link
+                isExternalLink={props.isExternal}
+                a11yLabel={props.a11yLabel}
                 onPress={() => props.onPress()}
             >
                 <Text

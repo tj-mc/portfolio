@@ -5,12 +5,17 @@ import {Card} from "../../../Card";
 import {theme} from "../../../../const/theme";
 import {QuickCommand} from "../../../pressable/QuickCommand";
 import {Fade} from "../../../animated/Fade";
-import {openURL} from "../../../../func/linking";
+import {useDispatch} from "react-redux";
+import {modalSlice} from "../../../../store/modalSlice";
 
 export const SkillCard: FC<{
     title: string,
     tools: React.ComponentElement<any, any>[]
 }> = props => {
+
+
+    const dispatch = useDispatch()
+
     return (
         <Fade>
             <Card>
@@ -78,7 +83,10 @@ export const SkillCard: FC<{
                         <QuickCommand
                             text={'get-in-touch'}
                             onPress={() => {
-                                openURL('tel:0419 710 903')
+                                dispatch(
+                                    modalSlice.actions.setContactVisible(true)
+                                )
+                                // openURL('tel:0419 710 903')
                             }}
                         />
                     </View>

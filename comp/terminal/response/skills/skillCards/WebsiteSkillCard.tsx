@@ -43,6 +43,8 @@ export const WebsitesSkillCard: FC = () => {
                 features and are
 
                 <InTextLink
+                    a11yLabel={'Open google page speed article'}
+                    isExternal={true}
                     onPress={() => openURL('https://www.thinkwithgoogle.com/intl/en-ca/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/')}>
                     slow to load.
                 </InTextLink>
@@ -53,6 +55,8 @@ export const WebsitesSkillCard: FC = () => {
                 I do the exact opposite.
 
                 <InTextLink
+                    a11yLabel={'Open google page speed test'}
+                    isExternal={true}
                     onPress={() => openURL(`https://developers.google.com/speed/pagespeed/insights/?url=${window.location}&tab=desktop`)}
                 >
                     Fast.
@@ -61,6 +65,8 @@ export const WebsitesSkillCard: FC = () => {
                 Responsive.
 
                 <InTextLink
+                    a11yLabel={'Open ally project website'}
+                    isExternal={true}
                     onPress={() => openURL('https://www.a11yproject.com/')}>
                     Accessible.
                 </InTextLink>

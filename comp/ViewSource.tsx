@@ -53,6 +53,8 @@ export const ViewSource: FC<{}> = () => {
                         onMouseLeave={() => hide()}
                     >
                         <Link
+                            isExternalLink={true}
+                            a11yLabel={'Open the github repo for this site'}
                             useUnderline={false}
                             onPress={() => {
                                 open('https://github.com/tj-mc/portfolio')

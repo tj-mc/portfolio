@@ -12,7 +12,9 @@ export const ContactBlockContent = [
     {
         label: <ContactTextIcon text={'ph'}/>,
         body: '0419 710 903',
-        onPress: () => openURL('tel:0419 710 903')
+        onPress: () => openURL('tel:0419 710 903'),
+        a11yLabel: 'Phone 0419 710 903',
+        isExternal: false
     },
 
     {
@@ -24,23 +26,31 @@ export const ContactBlockContent = [
         spaceBottom: spacerSize,
         useToast: true,
         toastText: 'Copied!',
+        a11yLabel: 'Copy email',
+        isExternal: false
     },
 
     {
         label: <AntDesign name="medium-monogram" size={iconSize} color={theme.color.white}/>,
         body: 'tjmc.medium.com',
-        onPress: () => openURL('https://tjmc.medium.com')
+        onPress: () => openURL('https://tjmc.medium.com'),
+        a11yLabel: 'Open Tom McIntosh on Medium',
+        isExternal: true
     },
     {
         label: <AntDesign name="twitter" size={iconSize} color={theme.color.white}/>,
         body: 'tjmc_dev',
-        onPress: () => openURL('https://twitter.com/tjmc_dev')
+        onPress: () => openURL('https://twitter.com/tjmc_dev'),
+        a11yLabel: 'Open Tom McIntosh on Twitter',
+        isExternal: true
     },
 
     {
         label: <AntDesign name="github" size={iconSize} color={theme.color.white}/>,
         body: 'tj-mc',
-        onPress: () => openURL('https://github.com/tj-mc')
+        onPress: () => openURL('https://github.com/tj-mc'),
+        a11yLabel: 'Open Tom McIntosh on Github',
+        isExternal: true
     },
 
 ]

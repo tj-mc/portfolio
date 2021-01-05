@@ -32,7 +32,9 @@ const History: FC = () => {
     }
 
     return (
-        <View>
+        <View
+            accessibilityLiveRegion={'polite'}
+        >
             <FlatList
                 keyExtractor={(item, index) => String(index)}
                 data={terminal}

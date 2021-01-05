@@ -110,10 +110,14 @@ export const RightColumn: FunctionComponent = () => {
                                 marginBottom: item?.spaceBottom || 8
                             }}
                         >
-                            <Link onPress={() => {
-                                item.onPress()
-                                item?.useToast && flash()
-                            }}>
+                            <Link
+                                isExternalLink={item.isExternal}
+                                a11yLabel={`Contact Item: ${item.a11yLabel}`}
+                                onPress={() => {
+                                    item.onPress()
+                                    item?.useToast && flash()
+                                }}
+                            >
                                 <Text
                                     style={{
                                         fontFamily: theme.font.primary.regular,

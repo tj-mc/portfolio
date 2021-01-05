@@ -34,7 +34,10 @@ export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text, respon
                         })
                     )
                 }
-            }}>
+            }}
+                  isExternalLink={false}
+                  a11yLabel={`Run ${text} quick command`}
+            >
                 <Text
                     style={{
                         fontFamily: theme.font.primary.bold,

@@ -26,6 +26,11 @@ export const DesignSkillCard: FC = () => {
             ]}
         >
             <Paragraph>
+                A truly custom design is the greatest advantage of a custom built site.
+            </Paragraph>
+
+            <Paragraph>
+                Forget about a generic template with your company logo
             </Paragraph>
 
         </SkillCard>
