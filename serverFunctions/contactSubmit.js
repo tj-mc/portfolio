@@ -5,7 +5,7 @@ exports.handler = async function (event, context) {
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(process.env.SENDGRID_KEY);
 
-    const toAddress = 'tom_mcintosh@outlook.com'
+    const toAddress = 'tjmc.dev.website@gmail.com'
 
     const emailBody = `<html>
     <strong>Email:</strong> ${data.email}
