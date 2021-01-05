@@ -1,20 +1,22 @@
 import React, {FC, useEffect, useRef, useState} from "react";
 import {Animated, Text, View} from 'react-native';
 import {theme} from "../../../const/theme";
-import {mediumFeed} from "../../../const/mediumFeed";
 import {Link} from "../../pressable/Link";
 import {mediumPage} from "../../../const/mediumPage";
 import {HeaderTwo} from "../../text/header/HeaderTwo";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../store";
 
 
 export const PublicationsResponse: FC = () => {
 
-    const [items, setItems] = useState([])
+    const publicationsState = useSelector((state: RootState) => state.publications)
+
     const fadeAnim = useRef(new Animated.Value(0)).current
 
     // Fade in when articles load
     useEffect(() => {
-        if (items.length > 0) {
+        if (publicationsState.length > 0) {
             Animated.timing(
                 fadeAnim,
                 {
@@ -24,19 +26,8 @@ export const PublicationsResponse: FC = () => {
                 }
             ).start();
         }
-    }, [items])
+    }, [publicationsState])
 
-    // Get articles
-    useEffect(() => {
-        fetch(mediumFeed)
-            .then(r => r.json())
-            .then(r => {
-                if (Array.isArray(r?.items) && r?.status === 'ok') {
-                    const filtered = r.items.filter((item: any) => item.categories.length !== 0)
-                    setItems(filtered)
-                }
-            })
-    }, [])
 
     return (
         <Animated.View
@@ -50,7 +41,7 @@ export const PublicationsResponse: FC = () => {
             />
             <Intro/>
             {
-                items.map((item: any) => <Article {...{item}} key={item.guid}/>)
+                publicationsState.map((item: any) => <Article {...{item}} key={item.guid}/>)
             }
             <ReadMore/>
         </Animated.View>

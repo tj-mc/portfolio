@@ -1,4 +1,4 @@
-exports.handler = async function (event, context) {
+exports.handler = async function (event) {
 
     const data = JSON.parse(event.body)
 
@@ -7,11 +7,12 @@ exports.handler = async function (event, context) {
 
     const toAddress = 'tjmc.dev.website@gmail.com'
 
-    const emailBody = `<html>
+    const emailBody = `
+<html>
     <strong>Email:</strong> ${data.email}
     <strong>Enquiry:</strong>
     <p>${data.enquiry}</p>
-    </html>
+</html>
     `
 
     const msg = {

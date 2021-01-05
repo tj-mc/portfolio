@@ -54,7 +54,8 @@ export const ContactModal: FC = () => {
                         padding: 10,
                         marginBottom: 10,
                         borderColor: theme.color.secondary,
-                        borderWidth: 2
+                        borderWidth: 2,
+                        fontSize: 13
                     }}
                     textContentType={'emailAddress'}
                     returnKeyLabel={'Submit'}
@@ -74,6 +75,7 @@ export const ContactModal: FC = () => {
                         marginBottom: 10,
                         borderColor: theme.color.secondary,
                         borderWidth: 2,
+                        fontSize: 13
                     }}
                     returnKeyLabel={'Submit'}
                     placeholder={'Tell me about your project.'}
