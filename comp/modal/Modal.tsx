@@ -1,35 +1,58 @@
-import React, {FC} from "react";
-import {TouchableOpacity, View} from 'react-native';
+import React, {FC, useEffect, useRef} from "react";
+import {Animated, TouchableOpacity, View} from 'react-native';
 import {theme} from "../../const/theme";
 import {AntDesign} from "@expo/vector-icons";
 
 export const Modal: FC<{
-    onClose: () => void
+    onClose: () => void,
+    visible: boolean
 }> = props => {
+
+    const fade = useRef(new Animated.Value(0)).current;
+
+    const show = () => {
+        Animated.timing(fade, {
+            useNativeDriver: true,
+            duration: 200,
+            toValue: 1
+        }).start()
+    }
+
+    const hide = () => {
+        Animated.timing(fade, {
+            useNativeDriver: true,
+            duration: 250,
+            toValue: 0
+        }).start()
+    }
+
+    useEffect(() => {
+        props.visible ? show() : hide()
+    }, [props.visible])
+
+
     return (
-        <>
-            <View
-                style={{
-                    position: 'fixed',
-                    top: 0,
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    display: 'flex'
-                }}
-            >
-                <Backdrop
-                    onClose={props.onClose}
-                />
-                <Box
-                    onClose={props.onClose}
-                >
-                    {props.children}
-                </Box>
-            </View>
-        </>
+        <Animated.View
+            //@ts-ignore - RNW
+            style={{
+                position: 'fixed',
+                opacity: fade,
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                justifyContent: 'center',
+                alignItems: 'center',
+                display: 'flex'
+            }}
+            // Stop touches when hidden
+            pointerEvents={props.visible ? undefined : 'none'}
+        >
+            <Backdrop onClose={props.onClose}/>
+            <Box onClose={props.onClose}>
+                {props.children}
+            </Box>
+        </Animated.View>
     )
 }
 

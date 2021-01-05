@@ -18,3 +18,5 @@ web-build/
 
 /.cache/
 /public/
+
+.env

@@ -13,6 +13,7 @@
     "@expo-google-fonts/fira-code": "^0.1.0",
     "@expo/vector-icons": "^12.0.0",
     "@reduxjs/toolkit": "^1.5.0",
+    "@sendgrid/mail": "^7.4.0",
     "expo": "~40.0.0",
     "expo-cli": "^4.0.15",
     "expo-font": "~8.4.0",
