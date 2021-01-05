@@ -16,7 +16,7 @@ exports.handler = async function (event, context) {
 
     const msg = {
         to: toAddress,
-        from: 'tjmc.dev.website@gmail.com', // Use the email address or domain you verified above
+        from: 'contact@tjmc.dev', // Use the email address or domain you verified above
         subject: 'New Contact form submission',
         html: emailBody,
     };
@@ -34,7 +34,7 @@ exports.handler = async function (event, context) {
             if (error.response) {
                 return {
                     statusCode: 500,
-                    body: error.response.body
+                    body: JSON.stringify(error.response.body)
                 };
             }
         });
