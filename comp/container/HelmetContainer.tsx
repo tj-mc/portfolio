@@ -2,6 +2,7 @@ import React, {FunctionComponent} from "react";
 import {Helmet} from 'react-helmet';
 import {useSelector} from "react-redux";
 import {RootState} from "../../store";
+import {theme} from "../../const/theme";
 
 
 const alwaysStyle = `
@@ -48,6 +49,10 @@ const particleStyle = `
 
 `
 
+const htmlColor = `
+html {background-color: ${theme.color.backdrop}}
+`
+
 export const HelmetContainer: FunctionComponent = ({children}) => {
 
     const fontLoad = useSelector((state: RootState) => state.fontLoad)
@@ -69,16 +74,13 @@ export const HelmetContainer: FunctionComponent = ({children}) => {
 
                 <style>{alwaysStyle}</style>
 
-                {/* Force monospace font before font load */}
-                {
-                    fontLoad.ready
-                        ?
-                        <style>{readyStyle}</style>
-                        :
-                        <style>{loadingStyle}</style>
-                }
-
                 <style>{particleStyle}</style>
+
+                <style>{htmlColor}</style>
+
+                {/* Force monospace font and blur before font load */}
+                {fontLoad.ready ? <style>{readyStyle}</style> : <style>{loadingStyle}</style>}
+
 
             </Helmet>
             {children}
