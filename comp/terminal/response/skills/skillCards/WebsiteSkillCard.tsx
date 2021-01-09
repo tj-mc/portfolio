@@ -13,6 +13,7 @@ import {rocketSlice} from "../../../../../store/rocketSlice";
 import {RootState} from "../../../../../store";
 import {AntDesign} from '@expo/vector-icons';
 import {Link} from "../../../../pressable/Link";
+import {bsodSlice} from "../../../../../store/bsodSlice";
 
 
 export const WebsitesSkillCard: FC = () => {
@@ -98,6 +99,9 @@ export const WebsitesSkillCard: FC = () => {
 
 
 const PowerButton: FC = () => {
+
+    const dispatch = useDispatch()
+
     return (
         <View
             style={{
@@ -109,6 +113,9 @@ const PowerButton: FC = () => {
         >
             <Link
                 onPress={() => {
+                    dispatch(
+                        bsodSlice.actions.setVisible(true)
+                    )
                 }}
                 a11yLabel={'Power Button'}
                 isExternalLink={false}

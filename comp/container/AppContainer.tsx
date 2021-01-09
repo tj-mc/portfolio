@@ -46,7 +46,7 @@ export const AppContainer: FunctionComponent = ({children}) => {
                 <RocketAnimation/>
                 <ContactModal/>
                 <MessageOverlay/>
-                {/*<BSOD/>*/}
+                <BSOD/>
             </>
         </View>
     )

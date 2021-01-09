@@ -4,9 +4,11 @@ import {rocketSlice} from "./rocketSlice";
 import {fontLoadSlice} from "./fontLoadSlice";
 import {modalSlice} from "./modalSlice";
 import {publicationsSlice} from "./publicationsSlice";
+import {bsodSlice} from "./bsodSlice";
 
 export const store = configureStore({
     reducer: {
+        bsod: bsodSlice.reducer,
         fontLoad: fontLoadSlice.reducer,
         terminal: terminalSlice.reducer,
         rocket: rocketSlice.reducer,
