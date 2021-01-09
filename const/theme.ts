@@ -6,6 +6,9 @@ export const theme = {
         }
     },
     color: {
+        bsod: {
+          backdrop: '#0827F5'
+        },
         primary: '#85F8FF',
         secondary: '#FFD1E2',
         backdrop: '#292929',

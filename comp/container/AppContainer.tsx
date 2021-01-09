@@ -9,6 +9,7 @@ import {mediumFeed} from "../../const/mediumFeed";
 import {Particles} from "../Particles";
 import {MessageOverlay} from "../MessageOverlay";
 import {theme} from "../../const/theme";
+import {BSOD} from "../BSOD";
 
 
 export const AppContainer: FunctionComponent = ({children}) => {
@@ -45,6 +46,7 @@ export const AppContainer: FunctionComponent = ({children}) => {
                 <RocketAnimation/>
                 <ContactModal/>
                 <MessageOverlay/>
+                {/*<BSOD/>*/}
             </>
         </View>
     )

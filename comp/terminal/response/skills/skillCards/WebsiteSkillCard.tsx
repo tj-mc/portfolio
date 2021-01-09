@@ -1,5 +1,5 @@
 import React, {FC, useRef} from "react";
-import {Animated, Text, TouchableOpacity} from 'react-native';
+import {Animated, Text, TouchableOpacity, View} from 'react-native';
 import {SkillCard} from "../SkillCard";
 import gatsby from "../../../../../assets/img/skillIcon/gatsby.png";
 import react from "../../../../../assets/img/skillIcon/react.png";
@@ -11,6 +11,9 @@ import {InTextLink} from "../../../../pressable/InTextLink";
 import {useDispatch, useSelector} from "react-redux";
 import {rocketSlice} from "../../../../../store/rocketSlice";
 import {RootState} from "../../../../../store";
+import {AntDesign} from '@expo/vector-icons';
+import {Link} from "../../../../pressable/Link";
+
 
 export const WebsitesSkillCard: FC = () => {
     return (
@@ -78,10 +81,10 @@ export const WebsitesSkillCard: FC = () => {
 
             <Paragraph>
                 There's a reason this site looks like a terminal from Tron mixed with Cyberpunk 2077; it's so it
-                makes an impact! Case in point: Touch this rocket and watch it do something memorable.
+                makes an impact! Case in point: Tap this power button and watch it do something memorable.
             </Paragraph>
 
-            <RocketAnimation/>
+            <PowerButton/>
 
             <Paragraph>
                 When we build a website together, the product is something that you can stand behind, and an experience
@@ -92,6 +95,37 @@ export const WebsitesSkillCard: FC = () => {
         </SkillCard>
     )
 }
+
+
+const PowerButton: FC = () => {
+    return (
+        <View
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 20
+            }}
+        >
+            <Link
+                onPress={() => {
+                }}
+                a11yLabel={'Power Button'}
+                isExternalLink={false}
+                useUnderline={false}
+            >
+
+                <AntDesign
+                    name="poweroff"
+                    size={38}
+                    color="white"
+                />
+
+            </Link>
+        </View>
+    )
+}
+
 
 const RocketAnimation: FC = () => {
 
