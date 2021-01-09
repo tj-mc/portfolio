@@ -1,42 +1,51 @@
-import React, {FunctionComponent} from 'react'
+import React, {FC} from 'react'
 
 import {Text, View} from 'react-native'
 import {theme} from "../../const/theme";
 import {Link} from "./Link";
 import {useDispatch} from "react-redux";
-import {terminalResponse, terminalSlice} from "../../store/terminalSlice";
+import {terminalSlice} from "../../store/terminalSlice";
+import {standardTerminalResponse} from "../../func/terminal/standardTerminalResponse";
 
 type QuickCommandProps = {
     text: string,
-    response?: terminalResponse,
-    onPress?: () => void
+    response?: standardTerminalResponse,
+    onPress?: () => void,
+    disabled?: boolean
 }
 
-export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text, response, onPress}) => {
+export const QuickCommand: FC<QuickCommandProps> = props => {
 
     const dispatch = useDispatch()
 
     return (
         <View
+            pointerEvents={props.disabled ? 'none' : undefined}
             style={{
+                opacity: props.disabled ? 0.2 : 1,
                 marginRight: 30,
-                marginTop: 10
+                marginTop: 15
             }}
         >
-            <Link onPress={() => {
-                if (onPress) {
-                    onPress()
-                } else {
-                    dispatch(
-                        terminalSlice.actions.add({
-                            prompt: text,
-                            response
-                        })
-                    )
-                }
-            }}
-                  isExternalLink={false}
-                  a11yLabel={`Run ${text} quick command`}
+            <Link
+                useUnderline={!props.disabled}
+                onPress={() => {
+
+                    if (props.disabled) return
+
+                    if (props.onPress) {
+                        props.onPress()
+                    } else if (props.response) {
+                        dispatch(
+                            terminalSlice.actions.add({
+                                prompt: props.text,
+                                response: props.response
+                            })
+                        )
+                    }
+                }}
+                isExternalLink={false}
+                a11yLabel={`Run ${props.text} quick command`}
             >
                 <Text
                     style={{
@@ -45,7 +54,7 @@ export const QuickCommand: FunctionComponent<QuickCommandProps> = ({text, respon
                         color: theme.color.primary
                     }}
                 >
-                    {'>'} {text}
+                    {'>'} {props.text}
                 </Text>
             </Link>
         </View>

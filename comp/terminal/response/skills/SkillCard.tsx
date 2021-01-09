@@ -86,7 +86,6 @@ export const SkillCard: FC<{
                                 dispatch(
                                     modalSlice.actions.setContactVisible(true)
                                 )
-                                // openURL('tel:0419 710 903')
                             }}
                         />
                     </View>

@@ -1,9 +1,6 @@
 import React, {FunctionComponent as FC, useEffect} from "react";
 import {View} from 'react-native';
 import {HeaderTwo} from "../../text/header/HeaderTwo";
-
-//@ts-ignore
-import TypeWriter from 'react-native-typewriter'
 import {Paragraph} from "../../text/Paragraph";
 
 export const ResumeResponse: FC<{}> = () => {

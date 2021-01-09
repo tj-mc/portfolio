@@ -31,21 +31,29 @@ export const AppDevSkillCard: FC = () => {
             </Paragraph>
 
             <Paragraph>
-                A mobile app is all about user experience. It just feels faster, smoother and more responsive,
-                allowing your users to get things done quicker, with less frustration. On top of this, you can
-                tap in to advanced device functionality, like camera, location and audio.
+                A mobile app is all about user experience. It feels faster, smoother and more responsive,
+                allowing your users to get things done quicker and with less frustration. On top of this, you can
+                tap in to advanced device functionality like camera, location, and audio.
             </Paragraph>
 
             <Paragraph>
-                I build refined mobile apps that feel right at home on iOS and Android, meaning you don’t have
-                to pick a platform. By utilising cutting edge technology used by Facebook, AirBnB and Uber,
-                your app will be finished in half the time, with half the bugs and at half the cost of
-                traditional development.
+
+                By now we know that both Android and iOS are core platforms for consumer interaction.
+                Choosing to cater to one platform or another isolates half you client base.
+                I build smooth and refined cross-platform mobile apps that bridge that gap.
             </Paragraph>
 
             <Paragraph>
-                From our first conversations, my goal is to understand your users, so that we can create the
-                best experience possible.
+                By utilising the same cutting edge technology as Facebook, AirBnB and Uber I can double your client base
+                while
+                finishing your app in half the time, with half the bugs and at half the cost of traditional development.
+            </Paragraph>
+
+            <Paragraph>
+                From our first conversation, my goal is to understand the vision for your project.
+                Throughout development I'll use this understanding to create the best experience possible.
+                Once it's built you'll not only have a customised and intuituve app, you'll understand the code it
+                stands on and how it was made.
             </Paragraph>
 
         </SkillCard>

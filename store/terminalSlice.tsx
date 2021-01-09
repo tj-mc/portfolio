@@ -1,17 +1,9 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-
-export enum terminalResponse {
-    portfolio = 'portfolio',
-    blog = 'blog',
-    openSource = 'open-source',
-    resume = 'resume',
-    notFound = 'not-found',
-    skills = 'skills'
-}
+import {standardTerminalResponse} from "../func/terminal/standardTerminalResponse";
 
 export type terminalSliceItem = {
     prompt: string,
-    response: terminalResponse
+    response: standardTerminalResponse
 }
 
 export const terminalSlice = createSlice({

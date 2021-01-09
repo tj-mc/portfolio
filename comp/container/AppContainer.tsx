@@ -1,12 +1,15 @@
 import React, {FunctionComponent, useEffect} from 'react'
 import {View} from 'react-native'
-import {theme} from "../../const/theme";
 import {ViewSource} from "../ViewSource";
 import {RocketAnimation} from "../animated/RocketAnimation";
 import {ContactModal} from "../modal/ContactModal";
 import {useDispatch} from "react-redux";
 import {publicationsSlice} from "../../store/publicationsSlice";
 import {mediumFeed} from "../../const/mediumFeed";
+import {Particles} from "../Particles";
+import {MessageOverlay} from "../MessageOverlay";
+import {theme} from "../../const/theme";
+
 
 export const AppContainer: FunctionComponent = ({children}) => {
 
@@ -30,19 +33,21 @@ export const AppContainer: FunctionComponent = ({children}) => {
         <View
             style={{
                 flex: 1,
+                backgroundColor: theme.color.backdrop,
                 alignItems: 'center',
                 justifyContent: 'center',
-                // overflow: 'hidden',
-                backgroundColor: theme.color.backdrop,
             }}
         >
             <>
+                <Particles/>
                 {children}
                 <ViewSource/>
                 <RocketAnimation/>
                 <ContactModal/>
+                <MessageOverlay/>
             </>
         </View>
     )
 }
+
 

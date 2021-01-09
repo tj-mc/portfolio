@@ -6,7 +6,7 @@ export const BlurContainer: FunctionComponent = ({children}) => {
         <>
             <div
                 aria-hidden
-                id={'test_id'}
+                id={'blur-container'}
                 style={{
                     position: 'absolute',
                     left: 0,

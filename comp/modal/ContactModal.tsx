@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Modal} from "./Modal";
 import {Text, TextInput, View} from "react-native";
 import {HeaderTwo} from "../text/header/HeaderTwo";
@@ -8,6 +8,8 @@ import {QuickCommand} from "../pressable/QuickCommand";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../store";
 import {modalSlice} from "../../store/modalSlice";
+import * as EmailValidator from 'email-validator'
+import {serverFunctions} from "../../const/serverFunctions";
 
 export const ContactModal: FC = () => {
 
@@ -15,7 +17,19 @@ export const ContactModal: FC = () => {
 
     const [email, setEmail] = useState('')
     const [body, setBody] = useState('')
+    const [isValid, setIsValid] = useState(false)
+
     const dispatch = useDispatch()
+
+    const validate = () => {
+        const emailValid = EmailValidator.validate(email)
+        const bodyInRequiredLength = body.length < 10000
+        return (emailValid && bodyInRequiredLength)
+    }
+
+    useEffect(() => {
+        setIsValid(validate())
+    }, [email, body])
 
     return (
 
@@ -41,7 +55,7 @@ export const ContactModal: FC = () => {
                 </Paragraph>
 
                 <Paragraph>
-                    Enter your email below and I'll get back to you before the end of the day.
+                    Enter your email below and I'll get back to you in a day or two.
                 </Paragraph>
 
                 <InputLabel text={'Email'}/>
@@ -78,7 +92,7 @@ export const ContactModal: FC = () => {
                         fontSize: 13
                     }}
                     returnKeyLabel={'Submit'}
-                    placeholder={'Tell me about your project.'}
+                    placeholder={'Tell me about your project. (optional)'}
                 />
 
                 <View
@@ -90,17 +104,20 @@ export const ContactModal: FC = () => {
                     }}
                 >
                     <QuickCommand
+                        disabled={!isValid}
                         text={'submit'}
                         onPress={() => {
-                            fetch(`.netlify/functions/contactSubmit`, {
+                            dispatch(
+                                modalSlice.actions.setContactVisible(false)
+                            )
+                            fetch(serverFunctions.contactSubmit, {
                                 method: 'POST',
                                 body: JSON.stringify({email: email, enquiry: body})
                             }).then(() => {
                                 setBody('')
                                 setEmail('')
-                                dispatch(
-                                    modalSlice.actions.setContactVisible(false)
-                                )
+                                dispatch(modalSlice.actions.setMessage("Thank you."))
+                                dispatch(modalSlice.actions.setMessageVisible(true))
                             }).catch(e => {
 
                             })
@@ -120,10 +137,11 @@ const InputLabel: FC<{ text: string }> = props => {
     return (
         <Text
             style={{
-                fontFamily: theme.font.primary.regular,
+                fontFamily: theme.font.primary.bold,
                 color: theme.color.white,
-                marginBottom: 2,
-                letterSpacing: 4
+                marginBottom: 4,
+                marginTop: 4,
+                // letterSpacing: 4
             }}
         >
             {props.text}

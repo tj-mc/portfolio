@@ -3,7 +3,8 @@ import {Platform, Text, TextInput, View} from 'react-native'
 import {theme} from "../const/theme";
 import {useDispatch} from "react-redux";
 import {terminalSlice} from "../store/terminalSlice";
-import {interpretPromptInput} from "../func/terminal/interpretPromptInput";
+import {functionalTerminalResponse} from "../func/terminal/functionalTerminalResponse";
+import {validatePromptInput} from "../func/terminal/validatePromptInput";
 
 export const PromptLine: FC<{ frozenValue?: string }> = props => {
 
@@ -35,12 +36,26 @@ export const PromptLine: FC<{ frozenValue?: string }> = props => {
                 <Input
                     frozenValue={props.frozenValue}
                     onSave={textInput => {
-                        dispatch(
-                            terminalSlice.actions.add({
-                                prompt: textInput,
-                                response: interpretPromptInput(textInput)
-                            })
-                        )
+
+                        // Remove spaces and set lower case
+                        const cleanInput = textInput.toLowerCase().trim()
+
+                        // If there is a function to run for this command
+                        const functionalResponder = functionalTerminalResponse.find(i => i.prompt === cleanInput)
+
+                        if (functionalResponder) {
+                            // Note that this is not added to the command history
+                            functionalResponder.action()
+
+                        } else {
+                            // This is just a regular command, or invalid
+                            dispatch(
+                                terminalSlice.actions.add({
+                                    prompt: cleanInput,
+                                    response: validatePromptInput(cleanInput)
+                                })
+                            )
+                        }
                     }}
                 />
 
@@ -60,10 +75,6 @@ const Input: FC<{ onSave: (textInput: string) => void, frozenValue?: string }> =
             onSubmitEditing={() => {
                 props.onSave(value)
                 setValue('')
-                setTimeout(() => {
-                    // @ts-ignore - This ref will not be null
-                    inputRef?.current.focus()
-                }, 10)
             }}
             ref={inputRef}
             editable={Boolean(props.frozenValue === undefined)}

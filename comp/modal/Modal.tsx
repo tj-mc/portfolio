@@ -1,11 +1,12 @@
 import React, {FC, useEffect, useRef} from "react";
-import {Animated, TouchableOpacity, View} from 'react-native';
+import {Animated, Pressable, TouchableOpacity, View} from 'react-native';
 import {theme} from "../../const/theme";
 import {AntDesign} from "@expo/vector-icons";
 
 export const Modal: FC<{
     onClose: () => void,
-    visible: boolean
+    visible: boolean,
+    hideWindow?: boolean
 }> = props => {
 
     const fade = useRef(new Animated.Value(0)).current;
@@ -49,9 +50,17 @@ export const Modal: FC<{
             pointerEvents={props.visible ? undefined : 'none'}
         >
             <Backdrop onClose={props.onClose}/>
-            <Box onClose={props.onClose}>
-                {props.children}
-            </Box>
+            {
+                props.hideWindow
+                    ?
+                    <>
+                        {props.children}
+                    </>
+                    :
+                    <Box onClose={props.onClose}>
+                        {props.children}
+                    </Box>
+            }
         </Animated.View>
     )
 }
@@ -69,10 +78,10 @@ const Box: FC<{
                 padding: 20,
             }}
         >
+            {props.children}
             <CloseButton
                 onClose={props.onClose}
             />
-            {props.children}
         </View>
     )
 }
@@ -88,8 +97,8 @@ const CloseButton: FC<{
             hitSlop={{
                 top: slop,
                 bottom: slop,
-                right: slop,
-                left: slop
+                left: slop,
+                right: slop
             }}
             onPress={() => props.onClose()}
             style={{
@@ -122,7 +131,7 @@ const Backdrop: FC<{
                     bottom: 0,
                 }}
             >
-                <TouchableOpacity
+                <Pressable
                     //@ts-ignore - RNW
                     style={{
                         backgroundColor: theme.color.modalBackdrop,

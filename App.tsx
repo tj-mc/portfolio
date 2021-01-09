@@ -24,7 +24,7 @@ export default function App() {
                                 </ViewContainer>
                             </AppContainer>
                         </FontLoadContainer>
-                </FillViewportContainer>
+                    </FillViewportContainer>
                 </BlurContainer>
             </HelmetContainer>
         </Provider>

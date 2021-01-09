@@ -1,4 +1,4 @@
-import React, {FunctionComponent as FC, ReactComponentElement, useEffect, useRef} from "react"
+import React, {FunctionComponent as FC, ReactComponentElement, useEffect, useRef, useState} from "react"
 import {Animated, FlatList, Text, View} from 'react-native'
 import {theme} from "../../const/theme";
 import {PromptLine} from "../PromptLine";
@@ -72,7 +72,34 @@ const Tab: FC = () => {
 
 }
 
+
+const DateMark: FC = () => {
+
+    const [date, setDate] = useState(new Date())
+
+    useEffect(() => {
+        setInterval(() => {
+            setDate(new Date())
+        }, 100)
+    }, [])
+
+    return (
+        <Text
+            style={{
+                color: theme.color.white,
+                fontFamily: theme.font.primary.regular,
+                marginRight: 5,
+                fontSize: 12
+            }}
+        >
+            {date.toLocaleTimeString()}
+        </Text>
+    )
+}
+
 const HeaderBar: FC = () => {
+
+
     return (
         <View
             style={{
@@ -80,10 +107,12 @@ const HeaderBar: FC = () => {
                 borderBottomWidth: 1.5,
                 display: 'flex',
                 flexDirection: 'row',
+                alignItems: 'center',
             }}
         >
             <Tab/>
             <View style={{flex: 1}}/>
+            <DateMark/>
         </View>
     )
 }
@@ -140,8 +169,8 @@ const MainContainer: FC = ({children}) => {
                 borderColor: theme.color.secondary,
                 borderWidth: 2,
                 transform: [
-                    { scaleX: x },
-                    { scaleY: y }
+                    {scaleX: x},
+                    {scaleY: y}
                 ]
             }}
         >

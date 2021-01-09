@@ -29,7 +29,7 @@ export const ServerAndDatabaseSkillCard: FC = () => {
         >
             <Paragraph>
                 If you're building an app or a website, you'll need some kind of server and database to power
-                your project. This lets you update content and capture information from your users easily.
+                your project. This lets you update content and collect information from your users easily.
             </Paragraph>
 
             <Paragraph>
@@ -61,15 +61,35 @@ export const ServerAndDatabaseSkillCard: FC = () => {
             </Paragraph>
 
             <Paragraph>
-                I also have experience working with large datasets of user
-                information, and writing advanced queries to gain new insights from your existing data.
+                I also have experience working with traditional databases and servers, which means that I can work with
+                your
+                current system to gain new insights without having to sacrifice your existing data.
             </Paragraph>
 
             <Paragraph>
-                By the way, have you ever wondered how Google Docs lets multiple users work on the same document,
-                without having to hit save?
-                This is done with a real-time database. This opens the door to functionality that your users will
-                really get hooked on.
+                Advancements haven't only been made in server technology. When looking for recent database innovation,
+                look no further than Google Docs. Have you ever wondered how multiple users can access the same document
+                simultaneously without having to worry about saving?
+
+            </Paragraph>
+
+            <Paragraph>
+                There now exist databases that create an ongoing,
+                real-time connection to your device, thus eliminating the need to manually save information. These aptly
+                named
+                <InTextLink
+                    onPress={() => {
+                        openURL('https://multipeers.itpeers.com/en/2017/02/20/vantagens-analise-tempo-real/')
+                    }}
+                    a11yLabel={'Read more about real-time databases'}
+                    isExternal={true}
+                >
+                    real-time databases
+                </InTextLink>
+
+                redefine what’s possible for your users’ experience. Luckily this technology
+                isn’t limited to industry leaders like Google. I’m familiar with these systems and can create the same
+                seamless experience for your project.
             </Paragraph>
 
         </SkillCard>

@@ -1,11 +1,11 @@
-import React, {FunctionComponent, useEffect, useState} from "react";
+import React, {FunctionComponent} from "react";
 import {Helmet} from 'react-helmet';
 import {useSelector} from "react-redux";
 import {RootState} from "../../store";
 
 
 const alwaysStyle = `
-#test_id {
+#blur-container {
     z-index: 1!important;
     background: rgba( 41, 41, 41, 0.0 ) !important;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
@@ -16,7 +16,7 @@ const alwaysStyle = `
 `
 
 const readyStyle = `
-#test_id {
+#blur-container {
     opacity: 0;
     transition: all 0.4s ease;
     pointer-events: none;
@@ -28,9 +28,24 @@ const loadingStyle = `
     font-family: monospace!important;
 }
 
-#test_id {
+#blur-container {
     opacity: 1;
 }
+`
+
+const particleStyle = `
+/* ---- particles.js container ---- */
+#particle-effect-container {
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    background-color: #292929;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
 `
 
 export const HelmetContainer: FunctionComponent = ({children}) => {
@@ -62,6 +77,8 @@ export const HelmetContainer: FunctionComponent = ({children}) => {
                         :
                         <style>{loadingStyle}</style>
                 }
+
+                <style>{particleStyle}</style>
 
             </Helmet>
             {children}

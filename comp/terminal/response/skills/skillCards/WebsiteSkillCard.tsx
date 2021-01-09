@@ -38,7 +38,7 @@ export const WebsitesSkillCard: FC = () => {
 
 
             <Paragraph>
-                That being said, not everybody has memorable website. Many are built from generic templates, are not
+                That being said, not everybody has memorable website. Many are built from generic templates, aren't
                 mobile-responsive, lack proper accessibility
                 features and are
 
@@ -52,7 +52,7 @@ export const WebsitesSkillCard: FC = () => {
 
 
             <Paragraph>
-                I do the exact opposite.
+                I guarantee the opposite.
 
                 <InTextLink
                     a11yLabel={'Open google page speed test'}

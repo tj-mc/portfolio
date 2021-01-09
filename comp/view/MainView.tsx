@@ -7,7 +7,9 @@ import {BodyText} from "../text/BodyText";
 import {QuickCommand} from "../pressable/QuickCommand";
 import {Terminal} from "../terminal/Terminal";
 import {ContactBlock} from "../contact/ContactBlock";
-import {terminalResponse} from "../../store/terminalSlice";
+import {standardTerminalResponse} from "../../func/terminal/standardTerminalResponse";
+import {useDispatch} from "react-redux";
+import {modalSlice} from "../../store/modalSlice";
 
 export const MainView: FunctionComponent = () => {
     return (
@@ -29,6 +31,9 @@ export const MainView: FunctionComponent = () => {
 
 
 const QuickCommandRow: FunctionComponent = () => {
+
+    const dispatch = useDispatch()
+
     return (
         <View
             style={{
@@ -38,7 +43,7 @@ const QuickCommandRow: FunctionComponent = () => {
             <View
                 style={{
                     marginTop: 20,
-                    marginBottom: 0
+                    marginBottom: -5
                 }}
             >
                 <HeaderTwo text={'Quick Commands'}/>
@@ -52,10 +57,12 @@ const QuickCommandRow: FunctionComponent = () => {
                     flexWrap: 'wrap'
                 }}
             >
-                <QuickCommand text={'skills'} response={terminalResponse.skills}/>
-                <QuickCommand text={'portfolio'} response={terminalResponse.portfolio}/>
-                <QuickCommand text={'resume'} response={terminalResponse.resume}/>
-                <QuickCommand text={'blog'} response={terminalResponse.blog}/>
+                <QuickCommand text={'skills'} response={standardTerminalResponse.skills}/>
+                <QuickCommand text={'portfolio'} response={standardTerminalResponse.portfolio}/>
+                <QuickCommand text={'resume'} response={standardTerminalResponse.resume}/>
+                <QuickCommand text={'blog'} response={standardTerminalResponse.blog}/>
+                <QuickCommand text={'get-in-touch'}
+                              onPress={() => dispatch(modalSlice.actions.setContactVisible(true))}/>
             </View>
         </View>
     )
@@ -111,7 +118,7 @@ const Title: FunctionComponent = () => {
         >
             <HeaderOne text={'Tom McIntosh'}/>
             <View style={{height: 5}}/>
-            <HeaderThree text={'Australian Developer & Creator'}/>
+            <HeaderThree text={'Brisbane Developer & Creator'}/>
         </View>
     )
 }
