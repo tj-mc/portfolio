@@ -8,3 +8,13 @@ export const Template: FC<{}> = props => {
         </View>
     )
 }
+
+type TestPropTypes = {
+    text: string
+}
+
+const Test: React.FunctionComponent<TestPropTypes> = ({text}) => {
+    return (
+        <> </>
+    )
+}

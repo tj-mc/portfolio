@@ -1,5 +1,4 @@
 import React, {FunctionComponent, useEffect} from "react";
-import 'particles.js'
 
 export const Particles: FunctionComponent = () => {
 
@@ -68,8 +67,11 @@ export const Particles: FunctionComponent = () => {
     const id = 'particle-effect-container'
 
     useEffect(() => {
-        //@ts-ignore
-        window.particlesJS(id, particleConfig);
+        if (typeof window !== 'undefined') {
+            require('particles.js')
+            //@ts-ignore
+            particlesJS(id, particleConfig);
+        }
     }, [])
 
     return (
