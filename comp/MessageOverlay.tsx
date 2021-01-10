@@ -18,6 +18,7 @@ export const MessageOverlay: FC = () => {
         )
     }
 
+
     return (
         <Modal
             hideWindow={true}
@@ -37,17 +38,23 @@ export const MessageOverlay: FC = () => {
                         fontFamily: theme.font.primary.regular
                     }}
                 >
-                    <TypeWriter
-                        fixed={true}
-                        typing={0.5}
-                        onTypingEnd={() => {
-                            setTimeout(() => {
-                                close()
-                            }, 2000)
-                        }}
-                    >
-                        {modalState.message}
-                    </TypeWriter>
+                    {
+                        modalState.messageVisible &&
+                        <TypeWriter
+                            fixed={true}
+                            typing={1}
+                            minDelay={30}
+                            maxDelay={200}
+                            initialDelay={500}
+                            onTypingEnd={() => {
+                                setTimeout(() => {
+                                    close()
+                                }, 1000)
+                            }}
+                        >
+                            {modalState.message}
+                        </TypeWriter>
+                    }
                 </Text>
             </View>
         </Modal>

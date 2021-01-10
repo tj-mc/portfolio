@@ -55,8 +55,8 @@ export const RightColumn: FunctionComponent = () => {
     const width = useWindowDimensions().width
 
     const topToastStyle = {
-        right: '10%',
-        top: '100%'
+        right: '-15%',
+        top: 22
     }
 
     const leftToastStyle = {

@@ -59,8 +59,8 @@ const QuickCommandRow: FunctionComponent = () => {
             >
                 <QuickCommand text={'skills'} response={standardTerminalResponse.skills}/>
                 <QuickCommand text={'portfolio'} response={standardTerminalResponse.portfolio}/>
-                <QuickCommand text={'resume'} response={standardTerminalResponse.resume}/>
                 <QuickCommand text={'blog'} response={standardTerminalResponse.blog}/>
+                <QuickCommand text={'resume'} response={standardTerminalResponse.resume}/>
                 <QuickCommand text={'get-in-touch'}
                               onPress={() => dispatch(modalSlice.actions.setContactVisible(true))}/>
             </View>

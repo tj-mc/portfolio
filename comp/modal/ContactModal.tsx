@@ -19,6 +19,8 @@ export const ContactModal: FC = () => {
     const [body, setBody] = useState('')
     const [isValid, setIsValid] = useState(false)
 
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
     const dispatch = useDispatch()
 
     const validate = () => {
@@ -104,18 +106,20 @@ export const ContactModal: FC = () => {
                     }}
                 >
                     <QuickCommand
-                        disabled={!isValid}
-                        text={'submit'}
+                        disabled={!isValid || isSubmitting}
+                        text={isSubmitting ? 'loading...' : 'submit'}
                         onPress={() => {
-                            dispatch(
-                                modalSlice.actions.setContactVisible(false)
-                            )
+                            setIsSubmitting(true)
                             fetch(serverFunctions.contactSubmit, {
                                 method: 'POST',
                                 body: JSON.stringify({email: email, enquiry: body})
                             }).then(() => {
+                                dispatch(
+                                    modalSlice.actions.setContactVisible(false)
+                                )
                                 setBody('')
                                 setEmail('')
+                                setIsSubmitting(false)
                                 dispatch(modalSlice.actions.setMessage("Thank you."))
                                 dispatch(modalSlice.actions.setMessageVisible(true))
                             }).catch(e => {

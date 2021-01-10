@@ -7,7 +7,6 @@ import {HeaderTwo} from "../../text/header/HeaderTwo";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store";
 
-
 export const PublicationsResponse: FC = () => {
 
     const publicationsState = useSelector((state: RootState) => state.publications)
@@ -56,10 +55,10 @@ const Intro: FC = () => {
                 style={{
                     color: theme.color.white,
                     fontFamily: theme.font.primary.regular,
-                    marginTop: 3,
-                    marginBottom: 5
+                    marginVertical: 10
                 }}
             >
+                I love writing about new technology, programming languages and what I learn along the way.
             </Text>
         </View>
     )
@@ -71,6 +70,7 @@ const ReadMore: FC = () => {
         <View
             style={{
                 height: 20,
+                marginTop: 15,
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -87,7 +87,9 @@ const ReadMore: FC = () => {
                 <Text
                     style={{
                         fontFamily: theme.font.primary.regular,
-                        color: theme.color.primary
+                        color: theme.color.primary,
+                        display: 'flex',
+                        alignItems: 'center'
                     }}
                 >
                     Read more on Medium
@@ -193,7 +195,7 @@ const Article: FC<{ item: any }> = ({item}) => {
                                 <Text
                                     style={{
                                         fontFamily: theme.font.primary.bold,
-                                        fontSize: 16,
+                                        fontSize: 19,
                                         color: theme.color.white,
                                         marginBottom: 10
                                     }}
@@ -223,10 +225,10 @@ const Article: FC<{ item: any }> = ({item}) => {
                                 <Text
                                     style={{
                                         fontFamily: theme.font.primary.regular,
-                                        color: theme.color.white
+                                        color: theme.color.white,
                                     }}
                                 >
-                                    {formattedDate}
+                                    Published {formattedDate}
                                 </Text>
                             </View>
 

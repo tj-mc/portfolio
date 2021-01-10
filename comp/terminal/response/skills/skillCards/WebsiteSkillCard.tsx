@@ -113,6 +113,7 @@ const PowerButton: FC = () => {
         >
             <Link
                 onPress={() => {
+                    document.querySelector('#bsod').requestFullscreen()
                     dispatch(
                         bsodSlice.actions.setVisible(true)
                     )

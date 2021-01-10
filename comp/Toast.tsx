@@ -64,7 +64,7 @@ const TopMode: FC = () => {
                 right: 0,
                 justifyContent: 'center',
                 alignItems: 'center',
-                top: '-10%',
+                top: '0%',
             }}
         >
             <Arrow/>
