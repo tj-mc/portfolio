@@ -12,22 +12,22 @@ export const SkillTool: FC<{
     const duration = 150
 
     const anim = useRef(new Animated.Value(minAnim)).current
-
-    const mouseIn = () => {
-        Animated.timing(anim, {
-            useNativeDriver: true,
-            toValue: maxAnim,
-            duration
-        }).start()
-    }
-
-    const mouseOut = () => {
-        Animated.timing(anim, {
-            useNativeDriver: true,
-            toValue: minAnim,
-            duration
-        }).start()
-    }
+    //
+    // const mouseIn = () => {
+    //     Animated.timing(anim, {
+    //         useNativeDriver: true,
+    //         toValue: maxAnim,
+    //         duration
+    //     }).start()
+    // }
+    //
+    // const mouseOut = () => {
+    //     Animated.timing(anim, {
+    //         useNativeDriver: true,
+    //         toValue: minAnim,
+    //         duration
+    //     }).start()
+    // }
 
     const scale = anim.interpolate({
         inputRange: [0, 1],
@@ -38,8 +38,8 @@ export const SkillTool: FC<{
     return (
         <Animated.View
             //@ts-ignore - RNW
-            onMouseEnter={() => mouseIn()}
-            onMouseLeave={() => mouseOut()}
+            // onMouseEnter={() => mouseIn()}
+            // onMouseLeave={() => mouseOut()}
             style={{
                 borderColor: theme.color.gray.card,
                 margin: 10,

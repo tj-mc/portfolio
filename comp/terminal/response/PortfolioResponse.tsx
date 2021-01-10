@@ -1,5 +1,5 @@
 import React, {FunctionComponent as FC} from "react";
-import {Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import {HeaderTwo} from "../../text/header/HeaderTwo";
 import {portfolioProject} from "./portfolio/portfolioProjectType";
 import {tuhAppProject} from "./portfolio/projects/tuhAppProject";
@@ -16,6 +16,12 @@ import {AntDesign} from '@expo/vector-icons';
 const projects: Array<portfolioProject> = [
     tuhAppProject,
     trailMixWebsiteProject,
+    // trailMixLiveStreamingProject,
+    // naocaFuneralStreamProject,
+    // tjmcDevProject,
+    // smileSeekerSmileRevealProject,
+    // chordCrafterProject,
+    // tomorrowJournalProject
 ]
 
 const findProject = (name: string) => projects.find(project => project.name === name)
@@ -49,8 +55,13 @@ const ActiveProject: FC = () => {
                 <Fade>
                     <BackButton/>
                     <Card>
-                        <Text>
-                            {findProject(projectsState.currentProjectId)?.name}
+                        <Text
+                            style={{
+                                fontFamily: theme.font.primary.regular,
+                                color: theme.color.white
+                            }}
+                        >
+                            {findProject(projectsState.currentProjectId)?.name} - Project description coming soon.
                         </Text>
                     </Card>
                 </Fade>
@@ -128,19 +139,22 @@ const TileGrid: FC<{ projects: Array<portfolioProject> }> = props => {
         <>
             {
                 projectsState.currentProjectId === '' &&
-                <View
-                    style={{
-                        marginHorizontal: -10,
-                        display: 'flex',
-                        flexDirection: 'row',
-                        flexWrap: 'wrap',
-                        justifyContent: 'space-between'
-                    }}
-                >
-                    {
-                        props.projects.map(project => <Tile key={project.name} {...{project}}/>)
-                    }
-                </View>
+                <Fade>
+
+                    <View
+                        style={{
+                            marginHorizontal: -10,
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
+                            justifyContent: 'space-between'
+                        }}
+                    >
+                        {
+                            props.projects.map(project => <Tile key={project.name} {...{project}}/>)
+                        }
+                    </View>
+                </Fade>
             }
         </>
     )
@@ -186,8 +200,44 @@ const Tile: FC<{ project: portfolioProject }> = props => {
                     >
                         {props.project.name}
                     </Text>
-                    <Text>
+                    <Text
+                        style={{
+                            fontFamily: theme.font.primary.regular,
+                            color: theme.color.white,
+                            marginVertical: 10,
+                            fontSize: 13
+
+                        }}
+                    >
                         {props.project.subtitle}
+                    </Text>
+                    <Image
+                        style={{
+                            width: '100%',
+                            height: 150
+                        }}
+                        source={props.project.thumbnail}
+                    />
+                    <Text
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontFamily: theme.font.primary.regular,
+                            color: theme.color.white,
+                            fontSize: 12,
+                            marginTop: 15
+                        }}
+                    >
+                        {
+                            props.project.technologies.map((item, index) => {
+
+                                let addComma = (index + 1 !== props.project.technologies.length)
+                                return (
+                                    <Text>{item}{addComma ? ', ' : null}</Text>
+                                )
+                            })
+                        }
                     </Text>
                 </Card>
             </Link>
