@@ -5,9 +5,11 @@ import {fontLoadSlice} from "./fontLoadSlice";
 import {modalSlice} from "./modalSlice";
 import {publicationsSlice} from "./publicationsSlice";
 import {bsodSlice} from "./bsodSlice";
+import {projectsSlice} from "./projectsSlice";
 
 export const store = configureStore({
     reducer: {
+        projects: projectsSlice.reducer,
         bsod: bsodSlice.reducer,
         fontLoad: fontLoadSlice.reducer,
         terminal: terminalSlice.reducer,

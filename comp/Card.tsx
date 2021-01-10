@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import {View} from 'react-native';
 import {theme} from "../const/theme";
 
-export const Card: FC = props => {
+export const Card: FC<{ noMargin?: boolean }> = props => {
     return (
         <View
             style={{
@@ -15,7 +15,7 @@ export const Card: FC = props => {
                 },
                 shadowOpacity: 0.35,
                 shadowRadius: 6.68,
-                marginVertical: 10,
+                marginVertical: props.noMargin ? 0 : 10,
                 padding: 15
             }}
         >

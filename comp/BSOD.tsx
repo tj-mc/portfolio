@@ -14,7 +14,6 @@ export const BSOD: FC = () => {
     const dispatch = useDispatch()
 
     const close = () => {
-        // document.exitFullscreen()
         dispatch(
             bsodSlice.actions.setVisible(false)
         )
