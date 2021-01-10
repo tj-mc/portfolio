@@ -1,8 +1,4 @@
-const getStatic = (path: string) => {
-    if (typeof window !== 'undefined') {
-        return `${window.location}static/` + path
-    }
-}
+const getStatic = (fileName: string) => `https://s3-ap-southeast-2.amazonaws.com/tjmc.dev/${fileName}`
 
 export const staticResources = {
     resume: getStatic('TomMcIntoshResume.pdf')

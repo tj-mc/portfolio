@@ -14,26 +14,12 @@ export const BSOD: FC = () => {
     const dispatch = useDispatch()
 
     const close = () => {
-        document.exitFullscreen()
+        // document.exitFullscreen()
         dispatch(
             bsodSlice.actions.setVisible(false)
         )
     }
 
-    // useEffect(() => {
-    //
-    // }, [])
-
-    // useEffect(() => {
-    //     if (bsodState.visible) {
-    //         setTimeout(() => {
-    //             // dispatch(
-    //             //     bsodSlice.actions.setVisible(false)
-    //             // )
-    //         }, 1500)
-    //     }
-    // }, [bsodState.visible])
-    //
     return (
         <div id={'bsod'}>
             {
