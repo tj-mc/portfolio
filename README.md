@@ -10,6 +10,7 @@ This is an Expo / React Native Web application that I use as my portfolio site.
 - React Native Web
 - Typescript
 - Redux Toolkit
+- Gatsby
 
 ## Goals
 - Integrate with a CMS.
