@@ -12,7 +12,15 @@ This is an Expo / React Native Web application that I use as my portfolio site.
 - Redux Toolkit
 - Gatsby
 
-## Goals
+## Project Goals
+- Simple, eye catching experience that leaves an impression.
+- Excellent accessibility. The whole site is navigatable with tabbing.
+- Low layout shift on first load
+- Rich animations
+- Terminal-style interactivity
+- A few hidden features :thinking:
+
+## To-Do
 - Integrate with a CMS.
   - Currently the content is hard typed, which makes updating a bit tedious.
 - Expand details on previous projects
