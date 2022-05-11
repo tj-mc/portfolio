@@ -71,6 +71,7 @@ const HeaderRow: FunctionComponent = () => {
             }}
         >
             <Title/>
+            <View style={{ width: 300}}/>
             <Description/>
         </View>
     )
@@ -81,7 +82,7 @@ const Description: FunctionComponent = () => {
         <View
             style={{
                 flex: 1,
-                marginLeft: '42%',
+                minWidth: 180,
                 marginBottom: 20
             }}
         >
