@@ -4,12 +4,12 @@ export const Particles: FunctionComponent = () => {
 
     const particleConfig = {
         "particles": {
-            "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
+            "number": {"value": 30, "density": {"enable": true, "value_area": 800}},
             "color": {"value": "#ffffff"},
             "shape": {
                 "type": "polygon",
                 "stroke": {"width": 0, "color": "#000000"},
-                "polygon": {"nb_sides": 5},
+                "polygon": {"nb_sides": 3},
                 "image": {"src": "img/github.svg", "width": 100, "height": 100}
             },
             "opacity": {
@@ -43,7 +43,7 @@ export const Particles: FunctionComponent = () => {
         "interactivity": {
             "detect_on": "canvas",
             "events": {
-                "onhover": {"enable": true, "mode": "bubble"},
+                "onhover": {"enable": false, "mode": "bubble"},
                 "onclick": {"enable": true, "mode": "push"},
                 "resize": true
             },

@@ -92,14 +92,14 @@ const Description: FunctionComponent = () => {
             style={{
                 flex: 1,
                 minWidth: '40%',
-                maxWidth: '100%',
+                maxWidth: '50%',
                 marginLeft: '15%',
                 marginBottom: 20
             }}
         >
             <BodyText
                 textAlign={'right'}
-                text={'My name is Tom, and I build digital experiences. If you’re interested in building a world-class mobile app, or an eye catching website, I’m always up for a chat.'}/>
+                text={`My name is Tom, and I build apps.\nIf you need help with a new or\nexisting app, bug fixes, UI upgrades, accessibility, or performance enhancements, I'd love to help you out.`}/>
         </View>
     )
 }
@@ -118,7 +118,7 @@ const Title: FunctionComponent = () => {
         >
             <HeaderOne text={'Tom McIntosh'}/>
             <View style={{height: 5}}/>
-            <HeaderThree text={'Brisbane Developer & Creator'}/>
+            <HeaderThree text={'App Developer'}/>
         </View>
     )
 }
