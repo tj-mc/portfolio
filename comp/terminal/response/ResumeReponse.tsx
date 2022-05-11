@@ -11,18 +11,6 @@ import {AntDesign} from '@expo/vector-icons';
 
 export const ResumeResponse: FC<{}> = () => {
 
-    const [didOpen, setDidOpen] = useState(false)
-
-    useEffect(() => {
-        const opener = setTimeout(() => {
-            openURL(staticResources.resume)
-            setTimeout(() => {
-                setDidOpen(true)
-            }, 50)
-        }, 1100)
-        return () => clearTimeout(opener)
-    }, [])
-
     return (
         <View>
             <View
@@ -33,35 +21,23 @@ export const ResumeResponse: FC<{}> = () => {
                     marginVertical: 25
                 }}
             >
-                {
-                    !didOpen
-                        ?
+                <Link
+                    onPress={() => {
+                        openURL(staticResources.resume)
+                    }}
+                    isExternalLink={false}
+                    a11yLabel={'Tap to open resume'}
+                >
+                    <View
+                        style={{
+                            marginBottom: 5
+                        }}
+                    >
                         <Body>
-                            <TypeWriter
-                                typing={1}
-                            >
-                                Opening...
-                            </TypeWriter>
+                            Open resume <AntDesign name="pdffile1" size={30} color="white"/>
                         </Body>
-                        :
-                        <Link
-                            onPress={() => {
-                                openURL(staticResources.resume)
-                            }}
-                            isExternalLink={false}
-                            a11yLabel={'Tap to open resume'}
-                        >
-                            <View
-                                style={{
-                                    marginBottom: 5
-                                }}
-                            >
-                                <Body>
-                                    Open resume <AntDesign name="pdffile1" size={30} color="white"/>
-                                </Body>
-                            </View>
-                        </Link>
-                }
+                    </View>
+                </Link>
 
             </View>
         </View>
