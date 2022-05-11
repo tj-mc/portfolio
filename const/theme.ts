@@ -10,7 +10,7 @@ export const theme = {
           backdrop: '#0827F5'
         },
         primary: '#85F8FF',
-        secondary: '#FFD1E2',
+        secondary: 'rgba(255,255,255,0.55)',
         backdrop: '#292929',
         white: '#FFFFFF',
         modalBackdrop: `rgba(0, 0, 0, 0.8)`,

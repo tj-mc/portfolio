@@ -34,10 +34,6 @@ export const PublicationsResponse: FC = () => {
                 opacity: fadeAnim
             }}
         >
-            <HeaderTwo
-                text={'Blog'}
-                animate
-            />
             <Intro/>
             {
                 publicationsState.map((item: any) => <Article {...{item}} key={item.guid}/>)

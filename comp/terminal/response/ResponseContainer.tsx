@@ -12,7 +12,6 @@ export const ResponseContainer: FC<{ prompt: string }> = props => {
                 marginTop: 10
             }}
         >
-            {/*<PromptLine frozenValue={props.prompt}/>*/}
             <>
                 {props.children}
             </>

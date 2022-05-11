@@ -25,10 +25,6 @@ export const ResumeResponse: FC<{}> = () => {
 
     return (
         <View>
-            <HeaderTwo
-                text={'Resume'}
-                animate
-            />
             <View
                 style={{
                     display: 'flex',

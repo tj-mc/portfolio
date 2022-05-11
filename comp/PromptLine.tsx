@@ -74,8 +74,8 @@ const Input: FC<{ onSave: (textInput: string) => void, frozenValue?: string }> =
             {...{value}}
             onSubmitEditing={() => {
                 props.onSave(value)
-                setValue('')
             }}
+            blurOnSubmit={false}
             ref={inputRef}
             editable={Boolean(props.frozenValue === undefined)}
             autoFocus

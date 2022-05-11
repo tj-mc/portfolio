@@ -12,8 +12,8 @@ export const Terminal: FC = () => {
         <MainContainer>
             <HeaderBar/>
             <PaddingContainer>
-                <History/>
                 <PromptLine/>
+                <History/>
             </PaddingContainer>
         </MainContainer>
     )

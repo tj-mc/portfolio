@@ -15,7 +15,7 @@ export const MainView: FunctionComponent = () => {
     return (
         <View
             style={{
-                maxWidth: 670,
+                maxWidth: 900,
                 height: '100%'
             }}
         >
@@ -42,14 +42,6 @@ const QuickCommandRow: FunctionComponent = () => {
         >
             <View
                 style={{
-                    marginTop: 20,
-                    marginBottom: -5
-                }}
-            >
-                <HeaderTwo text={'Quick Commands'}/>
-            </View>
-            <View
-                style={{
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -57,8 +49,6 @@ const QuickCommandRow: FunctionComponent = () => {
                     flexWrap: 'wrap'
                 }}
             >
-                <QuickCommand text={'skills'} response={standardTerminalResponse.skills}/>
-                <QuickCommand text={'portfolio'} response={standardTerminalResponse.portfolio}/>
                 <QuickCommand text={'blog'} response={standardTerminalResponse.blog}/>
                 <QuickCommand text={'resume'} response={standardTerminalResponse.resume}/>
                 <QuickCommand text={'get-in-touch'}
@@ -91,15 +81,13 @@ const Description: FunctionComponent = () => {
         <View
             style={{
                 flex: 1,
-                minWidth: '40%',
-                maxWidth: '50%',
-                marginLeft: '15%',
+                marginLeft: '42%',
                 marginBottom: 20
             }}
         >
             <BodyText
                 textAlign={'right'}
-                text={`My name is Tom, and I build apps.\nIf you need help with a new or\nexisting app, bug fixes, UI upgrades, accessibility, or performance enhancements, I'd love to help you out.`}/>
+                text={`My name is Tom, and I build apps. If you need help with a new or existing app, bug fixes, UI upgrades, accessibility, or performance enhancements, I'd love to talk.`}/>
         </View>
     )
 }
