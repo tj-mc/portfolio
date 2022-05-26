@@ -68,7 +68,6 @@ const MessageBubble: FC = () => {
         setVisible(width >= 804)
     }, [width])
 
-
     useEffect(() => {
         setTimeout(() => {
             Animated.spring(scale, {
