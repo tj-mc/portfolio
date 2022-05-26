@@ -1,15 +1,12 @@
 import React, {FC, useEffect, useRef, useState} from 'react';
 import {Animated, useWindowDimensions, View} from 'react-native'
 import {ViewSource} from "../ViewSource";
-import {RocketAnimation} from "../animated/RocketAnimation";
 import {ContactModal} from "../modal/ContactModal";
 import {useDispatch} from "react-redux";
 import {publicationsSlice} from "../../store/publicationsSlice";
 import {mediumFeed} from "../../const/mediumFeed";
-import {Particles} from "../Particles";
 import {MessageOverlay} from "../MessageOverlay";
 import {theme} from "../../const/theme";
-import {BSOD} from "../BSOD";
 import {AntDesign} from '@expo/vector-icons';
 import {Link} from "../pressable/Link";
 import {modalSlice} from "../../store/modalSlice";
@@ -37,20 +34,17 @@ export const AppContainer: FC = ({children}) => {
         <View
             style={{
                 flex: 1,
-                backgroundColor: theme.color.backdrop,
+                // backgroundColor: theme.color.backdrop,
                 alignItems: 'center',
                 justifyContent: 'center',
             }}
         >
             <>
-                <Particles/>
                 {children}
                 <ViewSource/>
-                <RocketAnimation/>
                 <MessageBubble/>
                 <ContactModal/>
                 <MessageOverlay/>
-                <BSOD/>
             </>
         </View>
     )

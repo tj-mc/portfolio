@@ -4,5 +4,4 @@ export enum standardTerminalResponse {
     openSource = 'open-source',
     resume = 'resume',
     notFound = 'not-found',
-    skills = 'skills'
 }

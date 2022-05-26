@@ -11,7 +11,7 @@ export const theme = {
         },
         primary: '#85F8FF',
         secondary: 'rgba(255,255,255,0.55)',
-        backdrop: '#292929',
+        backdrop: '#3b3b3b',
         white: '#FFFFFF',
         modalBackdrop: `rgba(0, 0, 0, 0.8)`,
         gray: {
