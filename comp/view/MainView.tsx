@@ -2,7 +2,6 @@ import React, {FunctionComponent} from 'react'
 import {ScrollView, View} from 'react-native';
 import {HeaderOne} from "../text/header/HeaderOne";
 import {HeaderThree} from "../text/header/HeaderThree";
-import {HeaderTwo} from "../text/header/HeaderTwo";
 import {BodyText} from "../text/BodyText";
 import {QuickCommand} from "../pressable/QuickCommand";
 import {Terminal} from "../terminal/Terminal";
@@ -10,6 +9,8 @@ import {ContactBlock} from "../contact/ContactBlock";
 import {standardTerminalResponse} from "../../func/terminal/standardTerminalResponse";
 import {useDispatch} from "react-redux";
 import {modalSlice} from "../../store/modalSlice";
+import {openURL} from "../../func/linking";
+import {staticResources} from "../staticResources";
 
 export const MainView: FunctionComponent = () => {
     return (
@@ -50,7 +51,7 @@ const QuickCommandRow: FunctionComponent = () => {
                 }}
             >
                 <QuickCommand text={'blog'} response={standardTerminalResponse.blog}/>
-                <QuickCommand text={'resume'} response={standardTerminalResponse.resume}/>
+                <QuickCommand text={'resume'} onPress={() => openURL(staticResources.resume)}/>
                 <QuickCommand text={'get-in-touch'}
                               onPress={() => dispatch(modalSlice.actions.setContactVisible(true))}/>
             </View>

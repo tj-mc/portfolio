@@ -34,7 +34,6 @@ export const AppContainer: FC = ({children}) => {
         <View
             style={{
                 flex: 1,
-                // backgroundColor: theme.color.backdrop,
                 alignItems: 'center',
                 justifyContent: 'center',
             }}
